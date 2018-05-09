@@ -7,19 +7,19 @@
   <meta name="keywords" content="lonhon lonhon的博客 前端博客 游龙翔隼">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://lonhon.top">
-  <title>一天一点，成为20% | LonHon的个人博客</title>
+  <title>xAxis.type=&#39;time&#39;时卡顿问题 - ECharts | LonHon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="如果我的文章对你有帮助， 欢迎来 star   ，文章中的问题也可以提issue同我交流。 本博客使用了Hexo+Yilia进行搭建 Hats off to the authors">
-<meta name="keywords" content="通知">
+  <meta name="description" content="卡顿问题出现背景：  ECharts^4.0.4 + Vue^2.5.9 option中主要耗能设置为：折线图 + Y轴2 + series3 + 数据量1300*3 + dataZoom控件 最开始X轴type为类目轴category，最近根据情况想改为时间轴time  卡顿主要表现在tooltip显示和拖动dataZoom时。">
+<meta name="keywords" content="前端,可视化,ECharts">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一天一点，成为20%">
-<meta property="og:url" content="http://lonhon.top/9999/09/09/Information-changeBlog/index.html">
+<meta property="og:title" content="xAxis.type=&#39;time&#39;时卡顿问题 - ECharts">
+<meta property="og:url" content="http://lonhon.top/2018/05/08/ECharts-UI-lags-when-xAxis-type-is-time/index.html">
 <meta property="og:site_name" content="LonHon的个人博客">
-<meta property="og:description" content="如果我的文章对你有帮助， 欢迎来 star   ，文章中的问题也可以提issue同我交流。 本博客使用了Hexo+Yilia进行搭建 Hats off to the authors">
-<meta property="og:updated_time" content="2018-04-28T12:57:03.726Z">
+<meta property="og:description" content="卡顿问题出现背景：  ECharts^4.0.4 + Vue^2.5.9 option中主要耗能设置为：折线图 + Y轴2 + series3 + 数据量1300*3 + dataZoom控件 最开始X轴type为类目轴category，最近根据情况想改为时间轴time  卡顿主要表现在tooltip显示和拖动dataZoom时。">
+<meta property="og:updated_time" content="2018-05-09T03:03:14.973Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一天一点，成为20%">
-<meta name="twitter:description" content="如果我的文章对你有帮助， 欢迎来 star   ，文章中的问题也可以提issue同我交流。 本博客使用了Hexo+Yilia进行搭建 Hats off to the authors">
+<meta name="twitter:title" content="xAxis.type=&#39;time&#39;时卡顿问题 - ECharts">
+<meta name="twitter:description" content="卡顿问题出现背景：  ECharts^4.0.4 + Vue^2.5.9 option中主要耗能设置为：折线图 + Y轴2 + series3 + 数据量1300*3 + dataZoom控件 最开始X轴type为类目轴category，最近根据情况想改为时间轴time  卡顿主要表现在tooltip显示和拖动dataZoom时。">
   
     <link rel="alternative" href="/atom.xml" title="LonHon的个人博客" type="application/atom+xml">
   
@@ -168,31 +168,43 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Information-changeBlog" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-ECharts-UI-lags-when-xAxis-type-is-time" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      一天一点，成为20%
+      xAxis.type=&#39;time&#39;时卡顿问题 - ECharts
     </h1>
   
 
         
-        <a href="/9999/09/09/Information-changeBlog/" class="archive-article-date">
-  	<time datetime="9999-09-08T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>9999-09-09</time>
+        <a href="/2018/05/08/ECharts-UI-lags-when-xAxis-type-is-time/" class="archive-article-date">
+  	<time datetime="2018-05-08T14:48:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!--
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=27694145&auto=0&height=66" style="margin-left: -10px;"></iframe>
--->
-<p>如果我的文章对你有帮助，<em> <a href="https://github.com/LonHon/lonhon.github.io" target="_blank" rel="noopener">欢迎来 star </a> </em> ，文章中的问题也可以提issue同我交流。</p>
-<p>本博客使用了Hexo+Yilia进行搭建 Hats off to the authors</p>
+        <p>卡顿问题出现背景：</p>
+<ul>
+<li>ECharts^4.0.4 + Vue^2.5.9</li>
+<li>option中主要耗能设置为：折线图 + Y轴<em>2 + series</em>3 + 数据量1300*3 + dataZoom控件</li>
+<li>最开始X轴type为类目轴category，最近根据情况想改为时间轴time</li>
+</ul>
+<p>卡顿主要表现在tooltip显示和拖动dataZoom时。</p>
+<a id="more"></a>
+<p>上周在使用的时候发现号称支持千万数据流畅显示的EC居然在我1300*3的数据下变得很卡，一点不科学。<br>初步分析是xAxis.type为time导致，因为切换回category后就卡顿问题消失。</p>
+<p>提了<a href="https://github.com/apache/incubator-echarts/issues/8277" target="_blank" rel="noopener">issue</a>暂时无果，后来分析了一波找到以下 <strong> 解决办法 </strong> ：</p>
+<ul>
+<li>series中设置 showSymbol: false, hoverAnimation: false</li>
+<li>option中设置 animation: false, animationDurationUpdate: 0</li>
+</ul>
+<p>得出结论是xAxis.type:’time’ 结合 series.showSymbol:true 导致图表卡顿。</p>
+<p>测试地址： <a href="http://echarts.baidu.com/examples/editor.html?c=dynamic-data2" target="_blank" rel="noopener">http://echarts.baidu.com/examples/editor.html?c=dynamic-data2</a></p>
+<p>测试代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">randomData</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    now = <span class="keyword">new</span> <span class="built_in">Date</span>(+now + oneDay);</span><br><span class="line">    value = value + <span class="built_in">Math</span>.random() * <span class="number">21</span> - <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        name: now.toString(),</span><br><span class="line">        value: [</span><br><span class="line">            [now.getFullYear(), now.getMonth() + <span class="number">1</span>, now.getDate()].join(<span class="string">'/'</span>),</span><br><span class="line">            <span class="built_in">Math</span>.round(value)</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> data = [], data1 = [], timeline = [];</span><br><span class="line"><span class="keyword">var</span> now = +<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1997</span>, <span class="number">9</span>, <span class="number">3</span>);</span><br><span class="line"><span class="keyword">var</span> oneDay = <span class="number">24</span> * <span class="number">3600</span> * <span class="number">1000</span>;</span><br><span class="line"><span class="keyword">var</span> value = <span class="built_in">Math</span>.random() * <span class="number">1000</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">4000</span>; i++) &#123;</span><br><span class="line">    data.push(randomData());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">option = &#123;</span><br><span class="line">    title: &#123;</span><br><span class="line">        text: <span class="string">'动态数据 + 时间坐标轴'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    tooltip: &#123;</span><br><span class="line">        trigger: <span class="string">'axis'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    xAxis: &#123;</span><br><span class="line">        type: <span class="string">'time'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    yAxis: [&#123;</span><br><span class="line">        type: <span class="string">'value'</span>,</span><br><span class="line">        boundaryGap: [<span class="number">0</span>, <span class="string">'100%'</span>]</span><br><span class="line">    &#125;,&#123;</span><br><span class="line">        type: <span class="string">'value'</span>,</span><br><span class="line">        boundaryGap: [<span class="number">0</span>, <span class="string">'100%'</span>]</span><br><span class="line">    &#125;],</span><br><span class="line">    series: [&#123;</span><br><span class="line">        name: <span class="string">'模拟数据'</span>,</span><br><span class="line">        type: <span class="string">'line'</span>,</span><br><span class="line">        data: data,</span><br><span class="line">        <span class="comment">// showSymbol: false,</span></span><br><span class="line">        <span class="comment">// hoverAnimation: false</span></span><br><span class="line">    &#125;],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -206,7 +218,15 @@ ga('send', 'pageview');
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">通知</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">可视化</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ECharts</a>
         		</li>
       		
 		</ul>
@@ -262,7 +282,7 @@ ga('send', 'pageview');
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://lonhon.top/9999/09/09/Information-changeBlog/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://lonhon.top/2018/05/08/ECharts-UI-lags-when-xAxis-type-is-time/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -276,9 +296,18 @@ ga('send', 'pageview');
   
 <nav id="article-nav">
   
+    <a href="/9999/09/09/Information-changeBlog/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          一天一点，成为20%
+        
+      </div>
+    </a>
   
-    <a href="/2018/05/08/ECharts-UI-lags-when-xAxis-type-is-time/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">xAxis.type=&#39;time&#39;时卡顿问题 - ECharts</div>
+  
+    <a href="/2018/04/28/Sentry-deploy-extend/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Sentry前端部署拓展篇（sourcemap关联、issue关联、release控制）</div>
       <i class="icon-circle-right"></i>
     </a>
   
