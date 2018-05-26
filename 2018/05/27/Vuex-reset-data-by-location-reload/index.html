@@ -7,17 +7,19 @@
   <meta name="keywords" content="lonhon lonhon的博客 前端博客 游龙翔隼">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://lonhon.top">
-  <title>Tag: ES2015 | LonHon的个人博客</title>
+  <title>快速重置vuex数据 - Vue | LonHon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="LonHon的个人博客,lonhon">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LonHon的个人博客">
-<meta property="og:url" content="http://lonhon.top/tags/ES2015/index.html">
+  <meta name="description" content="这周在做项目权限系统时遇到的一个场景，由于项目的权限系统+路由控制中用到了vuex存储全局数据，最终在登出时需要做到将所有数据进行重置or清空。">
+<meta name="keywords" content="前端,vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="快速重置vuex数据 - Vue">
+<meta property="og:url" content="http://lonhon.top/2018/05/27/Vuex-reset-data-by-location-reload/index.html">
 <meta property="og:site_name" content="LonHon的个人博客">
-<meta property="og:description" content="LonHon的个人博客,lonhon">
+<meta property="og:description" content="这周在做项目权限系统时遇到的一个场景，由于项目的权限系统+路由控制中用到了vuex存储全局数据，最终在登出时需要做到将所有数据进行重置or清空。">
+<meta property="og:updated_time" content="2018-05-26T16:33:36.458Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LonHon的个人博客">
-<meta name="twitter:description" content="LonHon的个人博客,lonhon">
+<meta name="twitter:title" content="快速重置vuex数据 - Vue">
+<meta name="twitter:description" content="这周在做项目权限系统时遇到的一个场景，由于项目的权限系统+路由控制中用到了vuex存储全局数据，最终在登出时需要做到将所有数据进行重置or清空。">
   
     <link rel="alternative" href="/atom.xml" title="LonHon的个人博客" type="application/atom+xml">
   
@@ -166,36 +168,50 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Vuex-reset-data-by-location-reload" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/07/Set-and-Map-in-ES2015/" class="archive-article-date">
-  	<time datetime="2017-05-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-07</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/07/Set-and-Map-in-ES2015/">ES6中的Set和Map</a>
+    <h1 class="article-title" itemprop="name">
+      快速重置vuex数据 - Vue
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/05/27/Vuex-reset-data-by-location-reload/" class="archive-article-date">
+  	<time datetime="2018-05-26T16:23:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这周在做项目权限系统时遇到的一个场景，由于项目的权限系统+路由控制中用到了vuex存储全局数据，最终在登出时需要做到将所有数据进行重置or清空。</p>
+<a id="more"></a>
+<h3 id="解决方法0-1"><a href="#解决方法0-1" class="headerlink" title="解决方法0.1"></a>解决方法0.1</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">actions.resetVuex = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    store.commit(state.a, <span class="literal">null</span>)</span><br><span class="line">    store.commit(state.b, <span class="literal">null</span>)</span><br><span class="line">    store.commit(state.c, <span class="literal">null</span>)</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">store.dispatch(<span class="string">'resetVuex'</span>)</span><br></pre></td></tr></table></figure>
+<p>一开始的想法是创建一个action实现vuex重置，在登出时调用该放方法即可。</p>
+<p><strong> 但是 </strong> 这种方法需要手动维护，而且一个个写上去感觉太low了，写的时候又想到可以通过遍历store.state进行所有重置，但是这种方法有一个弊端就是如果重置的值有不同的初始值的话，赋值的时候就很麻烦了。</p>
+<p>总之，上面的方法和搜索出来的方法都不尽人意，但是迫于无奈就先用着第一种了。</p>
+<h3 id="解决方法1-0"><a href="#解决方法1-0" class="headerlink" title="解决方法1.0"></a>解决方法1.0</h3><p>就在上述方法写到一半的时候忽然灵光一闪，我特么之前为了store的数据持久化不被页面F5重置还专门把数据放在SessionStorage这些本地存储里，现在一个个去重置感觉像个睿智，<strong> 在登出的时候刷新页面就能达到store重置的效果了 </strong>。</p>
+<p>通过页面重载方法window.location.reload()可以手动刷新页面，下面上完善流程代码:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.登出方法</span></span><br><span class="line">logout() &#123;</span><br><span class="line">    <span class="built_in">window</span>.localStorage.clear()</span><br><span class="line">    <span class="built_in">window</span>.sessionStorage.clear()</span><br><span class="line">    clearCookie()</span><br><span class="line">    <span class="keyword">this</span>.$router.push(&#123; <span class="attr">name</span>: <span class="string">'Login'</span> &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.登录页面 / created钩子函数</span></span><br><span class="line">data() &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    isReload: <span class="literal">false</span> <span class="comment">// 默认不显示页面内容</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line">created() &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.$store.getters.addRouters.length &gt; <span class="number">0</span>) &#123; <span class="comment">// 判断是否已经刷新</span></span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">window</span>.location.reload()</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 正式显示页面内容</span></span><br><span class="line">    <span class="keyword">this</span>.isReload = <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3.登录页面 / template</span></span><br><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div v-<span class="keyword">if</span>=<span class="string">"isRolad"</span>&gt;</span><br><span class="line">        ...</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br></pre></td></tr></table></figure>
+<p>注意，在登录页面的created钩子中，如果直接进行reload方法，会出现页面连续刷新的问题:登录页面加载到一半，内容已经显示的情况下会再次刷新，这种体验肯定要被产品怼差评。</p>
+<p>所以此处用到两个方法来解决两次刷新的问题</p>
+<ol>
+<li>登录页面中template使用v-if控制显示 </li>
+<li>根据store是否有数据判断是否重置，如果数据还有值，则reload()，此时因为isReload的默认值为false，所以登录页面在刷新前不会显示任何内容。刷新后，将isRolad赋值为true从而显示页面内容。</li>
+</ol>
+<p>最后，一个简单的reload方法就完成了vuex的重置。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -205,25 +221,121 @@ ga('send', 'pageview');
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ES2015</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://lonhon.top/2018/05/27/Vuex-reset-data-by-location-reload/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/9999/09/09/Information-changeBlog/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          一天一点，成为20%
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2018/05/08/ECharts-UI-lags-when-xAxis-type-is-time/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">xAxis.type=&#39;time&#39;时卡顿问题 - ECharts</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -248,9 +360,9 @@ ga('send', 'pageview');
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
