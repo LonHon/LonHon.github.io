@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="LonHon的个人博客">
 <meta property="og:description" content="最近在看自动化测试方面的内容，了解到现在比较流行的方案是python+selenium+unittest来做自动化测试。 之前有使用过puppeteer来编写爬虫，就在想使用puppeteer来做测试是否可行，在找资料时看到这篇文章感觉比较适合入门，就尝试把它翻译了一下。 译文和原文相比主要把一些无关内容删去了，不过主旨还是一致：通过一些小的demo来窥探puppeteer测试的风采.">
 <meta property="og:image" content="http://lonhon.top/assets/post/test.gif">
-<meta property="og:updated_time" content="2018-09-28T03:31:02.019Z">
+<meta property="og:updated_time" content="2018-09-28T03:34:59.989Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用puppeteer和mocha进行UI测试（译）">
 <meta name="twitter:description" content="最近在看自动化测试方面的内容，了解到现在比较流行的方案是python+selenium+unittest来做自动化测试。 之前有使用过puppeteer来编写爬虫，就在想使用puppeteer来做测试是否可行，在找资料时看到这篇文章感觉比较适合入门，就尝试把它翻译了一下。 译文和原文相比主要把一些无关内容删去了，不过主旨还是一致：通过一些小的demo来窥探puppeteer测试的风采.">
@@ -196,11 +196,11 @@ ga('send', 'pageview');
 <a id="more"></a>
 <p>原文：<a href="https://medium.com/@ankit_m/ui-testing-with-puppeteer-and-mocha-part-1-getting-started-b141b2f9e21" target="_blank" rel="noopener">https://medium.com/@ankit_m/ui-testing-with-puppeteer-and-mocha-part-1-getting-started-b141b2f9e21</a></p>
 <p>译文：<a href="https://lonhon.top/2018/09/27/Puppeteer-mocha-ui-test/">https://lonhon.top/2018/09/27/Puppeteer-mocha-ui-test/</a></p>
-<p>本文由个人结合实际情况翻译，修改了部分代码，与原文有差别属正常，文中亦做相应标注.</p>
+<p>本文由个人结合实际情况翻译，与原文有差别属正常，文中亦做相应标注.</p>
 <h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p><img src="/assets/post/test.gif" alt="" width="800"></p> 
 
-<p>每个搭建过webapp的开发人员一定知道每次测试新功能的痛苦：你只是修改了一个独立的功能模块，却有可能影响整个项目运行，你不得不考虑出bug的后果。</p>
-<p>为了防止这种情况出现，你需要花费大量时间去跑业务流程来，但是总会漏网之鱼，这绝不是一个可靠的测试方法。摆脱这种费时费力不讨好的唯一方式就是编写测试用例来进行验证——UI测试</p>
+<p>每个搭开发过webapp的开发人员一定知道每次测试新功能的痛苦：你只是修改了一个独立的功能模块，却有可能影响整个项目运行，你不得不考虑出bug的后果。</p>
+<p>为了防止出现重大bug，你需要花费大量时间去跑业务流程，但是总会漏网之鱼，这绝不是一个可靠的测试方法。摆脱这种费时费力不讨好的唯一方式就是编写测试用例来进行验证即UI测试</p>
 <p>本文尝试用puppeteer和mocha来进行UI测试，需要你掌握一些基础Javascript知识。</p>
 <h2 id="2-工具库"><a href="#2-工具库" class="headerlink" title="2. 工具库"></a>2. 工具库</h2><h3 id="2-1-Mocha"><a href="#2-1-Mocha" class="headerlink" title="2.1 Mocha"></a>2.1 Mocha</h3><p>Mocha是一个js测试框架，它提供了很多api来组织测试用例，比如descripe,it,before等，同时也提供命令行和编程的方式来执行测试。</p>
 <h3 id="2-2-Chai"><a href="#2-2-Chai" class="headerlink" title="2.2 Chai"></a>2.2 Chai</h3><p>单独使用Mocha对我们意义不大，我们还需要一个支持它的断言库来实际进行测试，本文选择ChaiJS作为断言库，也可以选择其它库比如expect.js,should.js等</p>
@@ -508,11 +508,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ECharts</a>
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -520,15 +516,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">异常监控</a>
+                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Sentry</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
+                <a href="javascript:void(0)" class="js-tag color3">ECharts</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -540,15 +532,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">异常监控</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Sentry</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ES2015</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">String对象</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -560,6 +552,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">String对象</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
@@ -568,23 +568,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图像资源</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">前端优化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Promise</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">异步编程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -597,6 +589,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">尾递归</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图像资源</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">前端优化</a>
               </li>
              
               <li class="article-tag-list-item">
