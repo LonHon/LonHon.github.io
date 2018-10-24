@@ -1,27 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
   <meta name="keywords" content="lonhon lonhon的博客 前端博客 游龙翔隼">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://lonhon.top">
-  <title>使用puppeteer和mocha进行UI测试（译） | LonHon的个人博客</title>
+  <title>Tag: 总结 | LonHon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近在看自动化测试方面的内容，了解到现在比较流行的方案是python+selenium+unittest来做自动化测试。 之前有使用过puppeteer来编写爬虫，就在想使用puppeteer来做测试是否可行，在找资料时看到这篇文章感觉比较适合入门，就尝试把它翻译了一下。 译文和原文相比主要把一些无关内容删去了，不过主旨还是一致：通过一些小的demo来窥探puppeteer测试的风采.">
-<meta name="keywords" content="puppeteer,UI testing">
-<meta property="og:type" content="article">
-<meta property="og:title" content="使用puppeteer和mocha进行UI测试（译）">
-<meta property="og:url" content="http://lonhon.top/2018/09/27/Puppeteer-mocha-ui-test/index.html">
+  <meta name="description" content="LonHon的个人博客,lonhon">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LonHon的个人博客">
+<meta property="og:url" content="http://lonhon.top/tags/总结/index.html">
 <meta property="og:site_name" content="LonHon的个人博客">
-<meta property="og:description" content="最近在看自动化测试方面的内容，了解到现在比较流行的方案是python+selenium+unittest来做自动化测试。 之前有使用过puppeteer来编写爬虫，就在想使用puppeteer来做测试是否可行，在找资料时看到这篇文章感觉比较适合入门，就尝试把它翻译了一下。 译文和原文相比主要把一些无关内容删去了，不过主旨还是一致：通过一些小的demo来窥探puppeteer测试的风采.">
-<meta property="og:image" content="http://lonhon.top/assets/post/test.gif">
-<meta property="og:updated_time" content="2018-09-28T03:34:59.989Z">
+<meta property="og:description" content="LonHon的个人博客,lonhon">
+<meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用puppeteer和mocha进行UI测试（译）">
-<meta name="twitter:description" content="最近在看自动化测试方面的内容，了解到现在比较流行的方案是python+selenium+unittest来做自动化测试。 之前有使用过puppeteer来编写爬虫，就在想使用puppeteer来做测试是否可行，在找资料时看到这篇文章感觉比较适合入门，就尝试把它翻译了一下。 译文和原文相比主要把一些无关内容删去了，不过主旨还是一致：通过一些小的demo来窥探puppeteer测试的风采.">
-<meta name="twitter:image" content="http://lonhon.top/assets/post/test.gif">
+<meta name="twitter:title" content="LonHon的个人博客">
+<meta name="twitter:description" content="LonHon的个人博客,lonhon">
   
     <link rel="alternative" href="/atom.xml" title="LonHon的个人博客" type="application/atom+xml">
   
@@ -53,7 +50,7 @@ ga('send', 'pageview');
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -170,222 +167,64 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Puppeteer-mocha-ui-test" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      使用puppeteer和mocha进行UI测试（译）
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/10/24/Think-about-ToB-and-ToC/" class="archive-article-date">
+  	<time datetime="2018-10-24T13:19:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-24</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/10/24/Think-about-ToB-and-ToC/">由个人开发项目对ToB和ToC产品的思考</a>
     </h1>
   
 
-        
-        <a href="/2018/09/27/Puppeteer-mocha-ui-test/" class="archive-article-date">
-  	<time datetime="2018-09-27T15:30:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近在看自动化测试方面的内容，了解到现在比较流行的方案是python+selenium+unittest来做自动化测试。</p>
-<p>之前有使用过puppeteer来编写爬虫，就在想使用puppeteer来做测试是否可行，在找资料时看到这篇文章感觉比较适合入门，就尝试把它翻译了一下。</p>
-<p>译文和原文相比主要把一些无关内容删去了，不过主旨还是一致：通过一些小的demo来窥探puppeteer测试的风采.</p>
-<a id="more"></a>
-<p>原文：<a href="https://medium.com/@ankit_m/ui-testing-with-puppeteer-and-mocha-part-1-getting-started-b141b2f9e21" target="_blank" rel="noopener">https://medium.com/@ankit_m/ui-testing-with-puppeteer-and-mocha-part-1-getting-started-b141b2f9e21</a></p>
-<p>译文：<a href="https://lonhon.top/2018/09/27/Puppeteer-mocha-ui-test/">https://lonhon.top/2018/09/27/Puppeteer-mocha-ui-test/</a></p>
-<p>本文由个人结合实际情况翻译，与原文有差别属正常，文中亦做相应标注.</p>
-<h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p><img src="/assets/post/test.gif" alt="" width="800"></p> 
-
-<p>每个搭开发过webapp的开发人员一定知道每次测试新功能的痛苦：你只是修改了一个独立的功能模块，却有可能影响整个项目运行，你不得不考虑出bug的后果。</p>
-<p>为了防止出现重大bug，你需要花费大量时间去跑业务流程，但是总会漏网之鱼，这绝不是一个可靠的测试方法。摆脱这种费时费力不讨好的唯一方式就是编写测试用例来进行验证即UI测试</p>
-<p>本文尝试用puppeteer和mocha来进行UI测试，需要你掌握一些基础Javascript知识。</p>
-<h2 id="2-工具库"><a href="#2-工具库" class="headerlink" title="2. 工具库"></a>2. 工具库</h2><h3 id="2-1-Mocha"><a href="#2-1-Mocha" class="headerlink" title="2.1 Mocha"></a>2.1 Mocha</h3><p>Mocha是一个js测试框架，它提供了很多api来组织测试用例，比如descripe,it,before等，同时也提供命令行和编程的方式来执行测试。</p>
-<h3 id="2-2-Chai"><a href="#2-2-Chai" class="headerlink" title="2.2 Chai"></a>2.2 Chai</h3><p>单独使用Mocha对我们意义不大，我们还需要一个支持它的断言库来实际进行测试，本文选择ChaiJS作为断言库，也可以选择其它库比如expect.js,should.js等</p>
-<h3 id="2-3-Puppeteer"><a href="#2-3-Puppeteer" class="headerlink" title="2.3 Puppeteer"></a>2.3 Puppeteer</h3><p>Puppeteer是一个headless的chrome浏览器库，最初基于Chrome 59版本（Windows下为Chrome 60）。它提供了许多api来方便的访问和操纵DOM、cookie、ajax等。</p>
-<p>我们将使用这些api来查看页面的UI元素，并在它们上运行断言来检查是否正确符合预期。</p>
-<h2 id="3-基础用法"><a href="#3-基础用法" class="headerlink" title="3. 基础用法"></a>3. 基础用法</h2><p>首先需要安装node.js，然后我们创建一个项目目录 <em>d:\puppeteer-mocha\</em> 。<br>个人建议使用nvm来管理node版本，本文使用<a href="mailto:Node@8.9.1" target="_blank" rel="noopener">Node@8.9.1</a> <a href="mailto:npm@5.5.1" target="_blank" rel="noopener">npm@5.5.1</a>。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">d:</span><br><span class="line">mkdir puppeteer-mocha</span><br><span class="line"><span class="built_in">cd</span> puppeteer-mocha</span><br><span class="line">npm init --yes</span><br><span class="line">npm i --save mocha@4.0.1 puppeteer@0.13.0 chai@4.1.2 http-server@0.10.0</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p> 上面模块安装时都指定了版本，你可以跳过这个步骤；这里还用到http-server开启一个简单的web服务器，如果已有，也可跳过。</p>
-</blockquote>
-<p>现在需要做的：</p>
-<ol>
-<li>添加test目录放测试文件</li>
-<li>添加src目录放网站</li>
-<li>添加npm scripts来开启服务器和进行测试</li>
-</ol>
-<p>正式开始之前，我们先创建一个index.html文件作为测试对象：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Puppeteer Mocha<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Page Title<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">'main-content'</span>&gt;</span>Some paragraph text<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>接下来添加两个npm脚本到package.json中，test脚本告知mocha需要执行的测试文件在test目录，–recursive参数表示运行子目录里的测试文件。</p>
-<p>server脚本会启动服务器并运行在 <em><a href="http://127.0.0.1:8080" target="_blank" rel="noopener">http://127.0.0.1:8080</a></em></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"test"</span>: <span class="string">"mocha --recursive test"</span>,</span><br><span class="line">    <span class="string">"server"</span>: <span class="string">"http-server src"</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p>最后，我们来创建一个简单的测试来检查环境是否正常，添加 <em>sample.spec.js</em> 文件，代码如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; expect &#125; = <span class="built_in">require</span>(<span class="string">'chai'</span>);</span><br><span class="line"></span><br><span class="line">describe(<span class="string">'sample test'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  it(<span class="string">'should work'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    expect(<span class="literal">true</span>).to.be.true;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>现在我们运行 <em>npm test</em> 试一下，正常的话会显示如下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sample <span class="built_in">test</span></span><br><span class="line">  ✓ should work</span><br></pre></td></tr></table></figure></p>
-<p>ok，现在我们结合puppeteer进行测试。</p>
-<h2 id="4-整合Puppeteer"><a href="#4-整合Puppeteer" class="headerlink" title="4. 整合Puppeteer"></a>4. 整合Puppeteer</h2><p>相较于每个测试单独开启新标签、运行测试、然后关闭页面，我们肯定更希望在一个页面下进行测试，并且复用该页面来进行所有测试。<br>这需要在 <em>test/root.js</em> 中进行设置，把在测试中使用需要的变量导出。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> puppeteer = <span class="built_in">require</span>(<span class="string">'puppeteer'</span>);</span><br><span class="line"><span class="keyword">const</span> &#123; expect &#125; = <span class="built_in">require</span>(<span class="string">'chai'</span>);</span><br><span class="line"><span class="keyword">const</span> b = global.browser</span><br><span class="line"><span class="keyword">const</span> e = global.expect</span><br><span class="line"><span class="keyword">const</span> globalVariables = &#123;</span><br><span class="line">	browser: b,</span><br><span class="line">	expect: e</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// puppeteer options</span></span><br><span class="line"><span class="keyword">const</span> opts = &#123;</span><br><span class="line">  headless: <span class="literal">false</span>,</span><br><span class="line">  slowMo: <span class="number">100</span>,</span><br><span class="line">  timeout: <span class="number">10000</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// expose variables</span></span><br><span class="line">before (<span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  global.expect = expect;</span><br><span class="line">  global.browser = <span class="keyword">await</span> puppeteer.launch(opts);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// close browser and reset global variables</span></span><br><span class="line">after (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  browser.close();</span><br><span class="line">  global.browser = globalVariables.browser;</span><br><span class="line">  global.expect = globalVariables.expect;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>译注：上述代码中作者原本使用到lodash.pick方法，为减少安装，译文已将其转换。</p>
-<p>before方法用于准备所有测试用例需要的browser和expect，它在测试之前运行一次并赋值给global.browser，就不用在每个测试用例里重复运行了。<br>当测试全部结束后，after方法会清理全局变量。</p>
-<p>译注：global类似页面中的window对象，可全局调用.</p>
-<p>需要特别注意的是puppeteer.launch 和 opts，launch启动了一个chrome浏览器，其配置如下：</p>
-<ul>
-<li>headless: false 是否开启无页面浏览器，这里是不开启</li>
-<li>每个操作放慢100ms运行，适用于想看到所有运行过程</li>
-<li>设置超时时间为10s</li>
-</ul>
-<p>现在我们来调整一下 <em>npm srcipt</em><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"test"</span>: <span class="string">"mocha test/root.js --recursive test"</span>,</span><br></pre></td></tr></table></figure></p>
-<p>接下来更新一下 <em>test/sample.spec.js</em> 文件，修改为测试browser的版本判断是否可用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">describe(<span class="string">'sample test'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  it(<span class="string">'should work'</span>, <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">await</span> browser.version());</span><br><span class="line">    expect(<span class="literal">true</span>).to.be.true;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>再次运行 <em>npm test</em>，不出意外你会看到以下输出：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sample <span class="built_in">test</span></span><br><span class="line">Chrome/64.0.3264.0</span><br><span class="line">   ✓ should work (103ms)</span><br></pre></td></tr></table></figure></p>
-<h2 id="5-第一个UI测试用例"><a href="#5-第一个UI测试用例" class="headerlink" title="5. 第一个UI测试用例"></a>5. 第一个UI测试用例</h2><p>通过以上，我们将所需要的准备工作已经搭好，接下来开始正式UI测试。</p>
-<p>首先，我们测试以下3件事情：</p>
-<ol>
-<li>页面title是“Puppeteer Mocha” （title标签）</li>
-<li>页面内容标题是“Page Title” （H1）</li>
-<li>页面包含一个样式为main-content的元素</li>
-</ol>
-<p>Puppeteer有很多类构造器，比如Page,Frame,Request等，这些类都提供了相应的方法来查看页面和交互。<br>一般的工作流程是打开页面，等待选择器选择dom，然后验证内容，下面是基础它们的一些简单用法示例：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// test/sample.spec.js</span></span><br><span class="line"></span><br><span class="line">describe(<span class="string">'sample test'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> page;</span><br><span class="line"></span><br><span class="line">  before (<span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    page = <span class="keyword">await</span> browser.newPage();</span><br><span class="line">    <span class="keyword">await</span> page.goto(<span class="string">'http://localhost:8080'</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  after (<span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">await</span> page.close();</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  it(<span class="string">'should have the correct page title'</span>, <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    expect(<span class="keyword">await</span> page.title()).to.equal(<span class="string">'Puppeteer Mocha'</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  it(<span class="string">'should have a heading'</span>, <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> HEADING_SELECTOR = <span class="string">'h1'</span>;</span><br><span class="line">    <span class="keyword">let</span> heading;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">await</span> page.waitFor(HEADING_SELECTOR);</span><br><span class="line">    heading = <span class="keyword">await</span> page.$<span class="built_in">eval</span>(HEADING_SELECTOR, heading =&gt; heading.innerText);</span><br><span class="line"></span><br><span class="line">    expect(heading).to.equal(<span class="string">'Page Title'</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  it(<span class="string">'should have a single content section'</span>, <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> BODY_SELECTOR = <span class="string">'.main-content'</span>;</span><br><span class="line">    <span class="keyword">await</span> page.waitFor(BODY_SELECTOR);</span><br><span class="line">    expect(<span class="keyword">await</span> page.$$(BODY_SELECTOR)).to.have.lengthOf(<span class="number">1</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>在这个测试用例中我们做了好几件事，现在一一分析。</p>
-<p>首先我们新建了一个页面导航至 <em><a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a></em>，并将该页面赋值给变量page，<br>page在descript函数块里声明，里面的it都可以访问，这样就可以分割多个测试点，便于阅读。</p>
-<p>译注: 建议把单个文件即 <em>describe</em> 想成一个完整功能测试，里面包含多个功能点即it的测试。</p>
-<p>第一个it测试点是检查页面title是否是“Puppeteer Mocha”</p>
-<p>第二个it是检查页面内容标题。page.$eval方法接受两个参数：selector和pageFunction，它先在浏览器环境下运行dom选择器document.querySelector并且将该dom作为pageFunction的参数。在这个用例中，我们最终返回了h1标签的文本并赋值给heading，然后对其进行判断。</p>
-<p>第三个it检查页面中是否存在一个样式含main-content的元素，page.$$方法只接受选择器作为参数，它先执行document.querySelectorAll查找页面中所有样式含main-content的dom，返回值是一个数组，当length为1时表示通过测试。</p>
-<h2 id="6-结语"><a href="#6-结语" class="headerlink" title="6. 结语"></a>6. 结语</h2><p>本文只用到puppeteer的冰山一角，只为让你体验一下UI测试的魅力。在后续的文章中，我们将深入研究复杂的web页面和交互。</p>
-<p>译注：这篇文章发布于2017.6，至今没有part2 应该是太监了…</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">puppeteer</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">产品</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">UI testing</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">总结</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://lonhon.top/2018/09/27/Puppeteer-mocha-ui-test/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/9999/09/09/Information-changeBlog/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          一天一点，成为20%
-        
-      </div>
-    </a>
   
   
-    <a href="/2018/09/04/Useful-HTML-meta/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">常用meta标签总结</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -410,9 +249,9 @@ ga('send', 'pageview');
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
@@ -484,19 +323,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AOP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">AJAX</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">node</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AOP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -512,23 +347,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">通知</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ECharts</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">puppeteer</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">UI testing</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -540,7 +363,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ECharts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ES2015</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">String对象</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -552,11 +387,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">String对象</a>
+                <a href="javascript:void(0)" class="js-tag color3">产品</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color3">总结</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -565,6 +400,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -580,7 +419,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">input</a>
+                <a href="javascript:void(0)" class="js-tag color5">图像资源</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">前端优化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -592,19 +435,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图像资源</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">前端优化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ES2017</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">input</a>
               </li>
             
             <div class="clearfix"></div>
@@ -612,7 +451,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:

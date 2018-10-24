@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
   <meta name="keywords" content="lonhon lonhon的博客 前端博客 游龙翔隼">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://lonhon.top">
-  <title>Tag: UI testing | LonHon的个人博客</title>
+  <title>由个人开发项目对ToB和ToC产品的思考 | LonHon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="LonHon的个人博客,lonhon">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LonHon的个人博客">
-<meta property="og:url" content="http://lonhon.top/tags/UI-testing/index.html">
+  <meta name="description" content="从业以来写过的项目大大小小也有好几个，一直没有仔细梳理过这些项目，这次打算从产品类型B端C端来整理一下，总结一下两种产品类型区别">
+<meta name="keywords" content="产品,总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="由个人开发项目对ToB和ToC产品的思考">
+<meta property="og:url" content="http://lonhon.top/2018/10/24/Think-about-ToB-and-ToC/index.html">
 <meta property="og:site_name" content="LonHon的个人博客">
-<meta property="og:description" content="LonHon的个人博客,lonhon">
+<meta property="og:description" content="从业以来写过的项目大大小小也有好几个，一直没有仔细梳理过这些项目，这次打算从产品类型B端C端来整理一下，总结一下两种产品类型区别">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-10-24T13:55:35.433Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LonHon的个人博客">
-<meta name="twitter:description" content="LonHon的个人博客,lonhon">
+<meta name="twitter:title" content="由个人开发项目对ToB和ToC产品的思考">
+<meta name="twitter:description" content="从业以来写过的项目大大小小也有好几个，一直没有仔细梳理过这些项目，这次打算从产品类型B端C端来整理一下，总结一下两种产品类型区别">
   
     <link rel="alternative" href="/atom.xml" title="LonHon的个人博客" type="application/atom+xml">
   
@@ -49,7 +52,7 @@ ga('send', 'pageview');
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -166,64 +169,187 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Think-about-ToB-and-ToC" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/27/Puppeteer-mocha-ui-test/" class="archive-article-date">
-  	<time datetime="2018-09-27T15:30:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/27/Puppeteer-mocha-ui-test/">使用puppeteer和mocha进行UI测试（译）</a>
+    <h1 class="article-title" itemprop="name">
+      由个人开发项目对ToB和ToC产品的思考
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/10/24/Think-about-ToB-and-ToC/" class="archive-article-date">
+  	<time datetime="2018-10-24T13:19:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>从业以来写过的项目大大小小也有好几个，一直没有仔细梳理过这些项目，这次打算从产品类型B端C端来整理一下，总结一下两种产品类型区别</p>
+<a id="more"></a>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>ToB即Bussince，面向企业的产品。</p>
+<p>ToC即Consumer，面向消费者的产品。</p>
+<p>ToB产品主要包括两种</p>
+<ol>
+<li>平台型产品，比如微信公众平台、站长平台等。</li>
+<li>内部平台，比如OA,CRM等。</li>
+</ol>
+<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p>其实从定义就能知道，一个是面向个人的，一个偏向定制，这也导致其关注的重点有所不同，从技术层面来讲也有不同的要求，比如C端很多数据就设计到高并发、数据库备份等。</p>
+<h3 id="产品目标"><a href="#产品目标" class="headerlink" title="产品目标"></a>产品目标</h3><p>B端产品最关心的是如何<strong>提高生产效率、解放人工</strong>。比如OA系统，员工请事假这个操作走人工方式可能需要写请假条、领导签字、行政审批、财务扣款，使用OA系统后只需要在网上处理这些流程，将中间的流转放在网上。</p>
+<p>而C端产品关心的则是如何有<strong>更多的用户</strong>和<strong>用户粘度</strong>，其面临的竞争相较B端产品也会多很多，比如音乐类产品就有QQ音乐、网易音乐、虾米、搜狗等，所以C端产品更多的目标是如何加强用户体验、产品的竞争力（这里更多指内容）。以网易云音乐为例，其评论就是一大特色，能有提高用户粘度。</p>
+<h3 id="客户和用户"><a href="#客户和用户" class="headerlink" title="客户和用户"></a>客户和用户</h3><p>客户和用户经常让人混淆，我们可以分别用client和user来区别。</p>
+<p>客户client一般是理性的，有明确的需求，关心是否能提高效率。</p>
+<p>用户user一般是感性的，关心的则主要他能享受到什么。</p>
+<h3 id="用户量"><a href="#用户量" class="headerlink" title="用户量"></a>用户量</h3><p>B端用户一般是同一组织、类别，用户特征比较明显，所以用户量会比较少。曾开发过的一款B端应用只有几十个用户，可能同时在用的就十来人。当然这个少是相对C端产品用户而言的，比如淘宝卖家平台也是几百万卖家在用。</p>
+<p>C端用户体量大很多了，比如淘宝、微信、京东用户以亿计算，每时每刻都会有大量用户在发送请求，做C端都希望自己的产品人人在用。</p>
+<h3 id="产品体验"><a href="#产品体验" class="headerlink" title="产品体验"></a>产品体验</h3><p>前面说了，B端产品注重提高生产效率，所以其关注点更多在于功能完整性上，产品人员需要强大的全局掌控能力和逻辑分析能力。</p>
+<p>C端产品更加注重如何吸引用户，这里引用《用户力》的总结：C端产品强调更快、更多、更好玩、更便宜，因此竞品也会越多，使得用户的选择也更多，但同时却缺乏耐心，所以C端产品是非常注重用户体验的表现层和框架层的效果呈现。</p>
+<p>B端产品就像良家少妇，能帮你把内务打理的整整有条，让你专心于事业；C端产品就像青楼台柱，琴棋书画舞样样精通，让楼下公子哥争先恐后，一掷千金。</p>
+<h3 id="盈利点"><a href="#盈利点" class="headerlink" title="盈利点"></a>盈利点</h3><p>就盈利模式来说，B端产品其实比较单一，一般以定制的方式售与企业，签订合同后进行开发，而后提供后续的维护、升级等增值服务。</p>
+<p>C端产品的盈利模式就比较多样化了，比如广告、交易分成、增值服务（VIP免广告）等。但是有一个共同的基础：<strong>用户即财富</strong>。去年大火的直播答题，极短时间（1周不到）吸引上千万用户注册，各投资公司纷纷抛来融资。虽然很快风头过了，但管中窥豹，用户量算是最投资者最看重的点，也是最能直接看到回报的。<br>因为一旦有了用户，盈利的可以慢慢思考，而没有用户，直接就被市场淘汰掉了。</p>
+<p>就像之前在知乎很火一个问题：为什么京东财报年年都是亏损，但还是没有倒闭。</p>
+<h3 id="产品更新"><a href="#产品更新" class="headerlink" title="产品更新"></a>产品更新</h3><p>B端产品开发周期和升级周期都是比较漫长的，一般开发完成后就改下业务上的bug，产品升级也更多建立在用户的需求变化上。</p>
+<p>C端产品开发和更新周期都比较短，一个好的idea需要尽快实现并抢占用户市场，不然很容易被别的公司想到同类idea，然后先上线把用户抢走。</p>
+<p>当然，有实力有流量的大公司也可以凭借自身的优势和强大的开发团队后发制人，提供更好的产品，或者直接收购。</p>
+<p>更新周期短是由于产品需要跟随当下动向，比如13年iOS7带来的扁平化设计，直接让一众APP跟着升级扁平化；比如临近双11、春节时，各类APP都会在产品里大做文章，开展各种活动。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>对于像我这样的开发者而言，了解产品的类型后也能更好的理解需求进而更好的与PM或用户沟通，比如做C端产品时PM提出做一个炫酷的按钮（耗时间且不能加强使用效果），这时可以根据产品目标，抓住其痛点对其进行劝退…</p>
+<p>以上是个人对ToB、ToC两类产品的一些总结，一家之言难免会有片面之处，望沟通斧正。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">puppeteer</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">产品</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">UI testing</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">总结</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://lonhon.top/2018/10/24/Think-about-ToB-and-ToC/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/9999/09/09/Information-changeBlog/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          一天一点，成为20%
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2018/09/04/Useful-HTML-meta/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">&lt;meta&gt;标签介绍及常用属性</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -248,9 +374,9 @@ ga('send', 'pageview');
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
@@ -322,19 +448,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AOP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">AJAX</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">node</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AOP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -350,23 +472,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">通知</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ECharts</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">puppeteer</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">UI testing</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -378,7 +488,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ECharts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ES2015</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">String对象</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -390,11 +512,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">String对象</a>
+                <a href="javascript:void(0)" class="js-tag color3">产品</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color3">总结</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -403,6 +525,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -418,7 +544,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">input</a>
+                <a href="javascript:void(0)" class="js-tag color5">图像资源</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">前端优化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -430,19 +560,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图像资源</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">前端优化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ES2017</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">input</a>
               </li>
             
             <div class="clearfix"></div>
@@ -450,7 +576,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
