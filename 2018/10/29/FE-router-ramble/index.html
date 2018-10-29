@@ -7,18 +7,24 @@
   <meta name="keywords" content="lonhon lonhon的博客 前端博客 游龙翔隼">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://lonhon.top">
-  <title>Tag: AOP | LonHon的个人博客</title>
+  <title>现代前端路由的实现原理 | LonHon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="LonHon的个人博客,lonhon">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LonHon的个人博客">
-<meta property="og:url" content="http://lonhon.top/tags/AOP/index.html">
+  <meta name="description" content="相信使用vue开发的前端er和我一样对vue-router不陌生。 但是就个人而言，每次用起来轻车熟路，包括懒加载都在项目使用，但是从未深究其原理。 这两天晚上一直在看前端路由方面的相关blog，结合自己的开发体验，写下了这篇个人总结，加深自己对这方面的知识掌握。">
+<meta name="keywords" content="前端,路由">
+<meta property="og:type" content="article">
+<meta property="og:title" content="现代前端路由的实现原理">
+<meta property="og:url" content="http://lonhon.top/2018/10/29/FE-router-ramble/index.html">
 <meta property="og:site_name" content="LonHon的个人博客">
-<meta property="og:description" content="LonHon的个人博客,lonhon">
+<meta property="og:description" content="相信使用vue开发的前端er和我一样对vue-router不陌生。 但是就个人而言，每次用起来轻车熟路，包括懒加载都在项目使用，但是从未深究其原理。 这两天晚上一直在看前端路由方面的相关blog，结合自己的开发体验，写下了这篇个人总结，加深自己对这方面的知识掌握。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://raw.githubusercontent.com/LonHon/some-resource/master/blog-img/route/hash.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/LonHon/some-resource/master/blog-img/route/history.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/LonHon/some-resource/master/blog-img/route/html-base-dom.png">
+<meta property="og:updated_time" content="2018-10-29T15:00:30.706Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LonHon的个人博客">
-<meta name="twitter:description" content="LonHon的个人博客,lonhon">
+<meta name="twitter:title" content="现代前端路由的实现原理">
+<meta name="twitter:description" content="相信使用vue开发的前端er和我一样对vue-router不陌生。 但是就个人而言，每次用起来轻车熟路，包括懒加载都在项目使用，但是从未深究其原理。 这两天晚上一直在看前端路由方面的相关blog，结合自己的开发体验，写下了这篇个人总结，加深自己对这方面的知识掌握。">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/LonHon/some-resource/master/blog-img/route/hash.gif">
   
     <link rel="alternative" href="/atom.xml" title="LonHon的个人博客" type="application/atom+xml">
   
@@ -167,36 +173,94 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-FE-router-ramble" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/05/AOP-in-javasript/" class="archive-article-date">
-  	<time datetime="2018-02-05T11:47:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/05/AOP-in-javasript/">JS小试AOP编程（常规版）</a>
+    <h1 class="article-title" itemprop="name">
+      现代前端路由的实现原理
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/10/29/FE-router-ramble/" class="archive-article-date">
+  	<time datetime="2018-10-29T14:19:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>相信使用vue开发的前端er和我一样对vue-router不陌生。</p>
+<p>但是就个人而言，每次用起来轻车熟路，包括懒加载都在项目使用，但是从未深究其原理。</p>
+<p>这两天晚上一直在看前端路由方面的相关blog，结合自己的开发体验，写下了这篇个人总结，加深自己对这方面的知识掌握。</p>
+<a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>犹记当初上班写的第一个前端项目，采用后端路由的方式，每次开发新页面时都需要先让后端分配一个路由地址，不然就是404了。</p>
+<p>现在想想，其实前后端分离不仅仅是开发模式的分离，更是前后端的<strong>资源的分离</strong>。</p>
+<h2 id="路由简介"><a href="#路由简介" class="headerlink" title="路由简介"></a>路由简介</h2><p>简单来说路由就是浏览器和服务器进行交互的一种方式，通过不同的路径请求不同的资源、页面是路由的主要功能。</p>
+<p><em>资源</em>就是我们能看到or看不到的js代码、图片、css样式、html结构、数据等</p>
+<p>最开始路由是由后端控制的，因为web早期开发时php、jsp、asp等都是直接将页面和数据在后端生成后（SSR），再返回给浏览器reload页面进行渲染显示。</p>
+<ul>
+<li>切换页面： <strong>浏览器请求——等待——服务器响应</strong>，然后浏览器刷新</li>
+<li>用户操作： <strong>浏览器请求——等待——服务器响应</strong>，然后浏览器刷新</li>
+</ul>
+<p>这样导致用户体验极差，<br>所以最开始网站大多以静态页面展示信息为主，如企业官网、新闻网站之流，哪有现在各种B/S架构系统这么风光。</p>
+<p><strong>而Ajax技术的兴起则彻底改变了这一切</strong>，Ajax让我们能够在不刷新浏览器的前提下刷新数据。</p>
+<p><em>1996，微软首先提出 iframe 标签，iframe 带来了异步加载和请求元素的概念，随后在 1998 年，微软的 Outloook Web App 团队提出 Ajax 的基本概念（XMLHttpRequest的前身），并在 IE5 通过 ActiveX 来实现了这项技术。在微软实现这个概念后，其他浏览器比如 Mozilia，Safari，Opera 相继以 XMLHttpRequest 来实现 Ajax。（兼容问题从此出现，话说微软命名真喜欢用X，MFC源码一大堆。。）不过在 IE7 发布时，微软选择了妥协，兼容了 XMLHttpRequest 的实现。</em></p>
+<p>有了 Ajax 后，用户操作后就不用再等待糟心的浏览器刷新，也为前端独立实现路由提供了可能。</p>
+<h2 id="前端路由实现原理"><a href="#前端路由实现原理" class="headerlink" title="前端路由实现原理"></a>前端路由实现原理</h2><p>上面提到的Ajax解决了<strong>用户操作-刷新页面</strong>的问题，而前端路由解决了<strong>切换页面-刷新页面</strong>的问题</p>
+<p>前端路由究其本质就是：</p>
+<ol>
+<li>监听 url 的变化</li>
+<li>截获new url地址</li>
+<li>解析new url匹配路由规则</li>
+<li>显示new url页面内容</li>
+</ol>
+<p><em>但是这样有人就会问：url 每次变化不是都会刷新页面吗？页面都刷新了那和后端路由有什么区别？</em></p>
+<p>所以要实现前端路由首先需要解决的是<strong>改变页面url不向后端发出请求</strong>。</p>
+<p>第一种方法是通过 hash 的方式来实现url切换，因为hash的变化不会引起页面的刷新，hash后面的字符也不会发送给服务器。</p>
+<p>第二种方法则是通过14年HTML5中History第一项新增的<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/History_API" target="_blank" rel="noopener">pushState、replaceState</a>方法。</p>
+<h3 id="Hash路由"><a href="#Hash路由" class="headerlink" title="Hash路由"></a>Hash路由</h3><p>最开始hash其实是作为页面锚点出现的，实现点击某个链接后迅速定位到对应位置，见<a href="http://www.w3school.com.cn/html/html_links.asp#tips" target="_blank" rel="noopener">a标签-锚</a>。</p>
+<p><em><a href="https://www.exmple.com/#/test" target="_blank" rel="noopener">https://www.exmple.com/#/test</a></em></p>
+<p>以上面url为例，此时hash值为 /test。它的特点在于：hash 虽然出现在 URL 中，但不会被包括在 HTTP 请求中，对后端完全是透明的，因此改变 hash 不会重新加载页面。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 路由</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeRoute</span>(<span class="params">path</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 切换页面内容</span></span><br><span class="line">    $(<span class="string">'#app'</span>).innerHtml(<span class="string">'</span></span><br><span class="line"><span class="string">        &lt;div&gt;test页面&lt;/div&gt;</span></span><br><span class="line"><span class="string">    '</span>)</span><br><span class="line">    <span class="built_in">window</span>.location.hash = <span class="string">'#'</span> + path</span><br><span class="line">&#125;</span><br><span class="line">changeRoute(<span class="string">'/test'</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/LonHon/some-resource/master/blog-img/route/hash.gif" alt="tupian"></p>
+<p>上面是hash路由的简单demo，运行changeRoute方法同时会触发window.hashchange方法。</p>
+<p>hash路由有以下缺点：</p>
+<ol>
+<li>浏览器地址栏中显示的url一定会有一个#号</li>
+<li>页面不能再使用书签跳转，占用了原来的书签锚点链接</li>
+</ol>
+<p>与实现前端路由的伟大使命相比，这些缺点在之前是完全可以接受的。</p>
+<h3 id="History路由"><a href="#History路由" class="headerlink" title="History路由"></a>History路由</h3><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/History" target="_blank" rel="noopener">History对象-MDN</a></p>
+<p>History路由主要是使用了H5新增的pushState和replaceState两个方法实现来更改url，相较于hash，两者路由原理基本一致，可以看做是HTML5提供官方版本的前端路由。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeRoute</span>(<span class="params">path</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 切换页面内容</span></span><br><span class="line">    $(<span class="string">'#app'</span>).innerHtml(<span class="string">'</span></span><br><span class="line"><span class="string">        &lt;div&gt;test页面&lt;/div&gt;</span></span><br><span class="line"><span class="string">    '</span>)</span><br><span class="line">    history.pushState(&#123;&#125;, <span class="string">`title <span class="subst">$&#123;path&#125;</span>`</span>, path)</span><br><span class="line">&#125;</span><br><span class="line">changeRoute(<span class="string">'/test'</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/LonHon/some-resource/master/blog-img/route/history.gif" alt="tupian"></p>
+<p>上面同样是history路由的简单demo</p>
+<p><strong>它也有一个需要注意的地方</strong>：刷新会从服务器请求当前url的资源从而导致404，所以需要后端将所有请求重定向到index，由前端控制是否真的404。</p>
+<h3 id="如何更改页面"><a href="#如何更改页面" class="headerlink" title="如何更改页面"></a>如何更改页面</h3><p>我们知道，路由的目的是定位到相应页面，上面说的只是如何在不重新请求的情况下改变url，那么如何把页面内容改变为对应url的内容呢？</p>
+<p>假设我们的web应用如下，app里放的是所有显示的内容：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>lonhon.top<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    index</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>前端路由其实是在通过hash | history <strong>改变url的同时将app节点innerHtml替换为对应html内容</strong>。</p>
+<h2 id="前端路由优缺点"><a href="#前端路由优缺点" class="headerlink" title="前端路由优缺点"></a>前端路由优缺点</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>从性能和用户体验的层面来比较的话，后端路由每次访问一个新页面的时候都要向服务器发送请求，然后服务器再响应请求，这个过程肯定会有延迟。而前端路由在访问一个新页面的时候仅仅是变换了一下路径而已，没有了网络延迟，对于用户体验来说会有相当大的提升。</p>
+<!-- ![tupian](https://raw.githubusercontent.com/LonHon/some-resource/master/blog-img/route/html-base-dom.png) -->
+<p><img src="https://raw.githubusercontent.com/LonHon/some-resource/master/blog-img/route/html-base-dom.png" width="800px"></p>
+<p>如上一个页面结构，navigator和header都是一样，我们切换页面实际上只是改变中间content的显示内容，页面较少时我们可以将全部content拿到，然后前端路由进行内容切换，对用户来说就是页面切换就是毫秒级响应。</p>
+<p>如果使用 <em>懒加载</em> 的话，也可以忽略已有的navigator和header只从服务器拿content，从而减少http请求的传输内容。</p>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>无法刷新时无法记录当前滚动位置，不过现在vue-router和react-router都对这方面进行了完好的封装。</p>
+<h2 id="杂记"><a href="#杂记" class="headerlink" title="杂记"></a>杂记</h2><h3 id="路由懒加载"><a href="#路由懒加载" class="headerlink" title="路由懒加载"></a>路由懒加载</h3><p>路由懒加载就是在路由跳转到某个页面的时候再请求该页面的资源（和后端路由性质不同），比如index和product页面是高频页面，我们可以首次访问时就请求这两个页面的资源，后面切换就直接前端路由后加载，加快访问速度。</p>
+<p>而other页面是低频页面，我们可以采用懒加载方式，访问的时候再请求，这样就能减小首次访问时所需的资源，从而提高访问速度。</p>
+<h3 id="页面404处理"><a href="#页面404处理" class="headerlink" title="页面404处理"></a>页面404处理</h3><p>使用前端路由时，我们一般会先建立一个路由表，存放所有路由信息，当访问路由表中没有注册的页面时，就可以返回404页面了。</p>
+<h3 id="meta"><a href="#meta" class="headerlink" title="meta"></a>meta</h3><p><a href="https://github.com/LonHon/blog-demo/tree/master/demo" target="_blank" rel="noopener">本文两种路由demo</a><br><a href="https://github.com/vuejs/vue-router/blob/dev/src/history/hash.js#L22-L54" target="_blank" rel="noopener">vue-router hash路由源码</a><br><a href="https://github.com/vuejs/vue-router/blob/dev/src/history/html5.js#L44-L51" target="_blank" rel="noopener">vue-router history路由源码-onpopstate</a><br><a href="https://github.com/vuejs/vue-router/blob/dev/src/util/push-state.js#L40-L55" target="_blank" rel="noopener">vue-router history路由源码-pushstate</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -206,25 +270,121 @@ ga('send', 'pageview');
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">AOP</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">路由</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://lonhon.top/2018/10/29/FE-router-ramble/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/9999/09/09/Information-changeBlog/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          一天一点，成为20%
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2018/10/24/Think-about-ToB-and-ToC/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">对ToB和ToC产品的思考</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -249,9 +409,9 @@ ga('send', 'pageview');
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
