@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta name="keywords" content="lonhon lonhon的博客 前端博客 游龙翔隼">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://lonhon.top">
   <title>Sentry前端部署基础篇（VUE + Axios） | LonHon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -16,21 +15,20 @@
 <meta property="og:url" content="http://lonhon.top/2018/04/19/Sentry-deploy-simple/index.html">
 <meta property="og:site_name" content="LonHon的个人博客">
 <meta property="og:description" content="凡事只要有可能出错,那就一定会出错  对于任何一个项目而言，本地测试肯定做不到100%覆盖，而且，我们也不能保证用户能按照我们的预期进行操作，其实对我而言，用户才是最好的测试者，但是我们不能奢求每个用户遇到问题时候都会主动向我们反馈。 故而，我们需要在项目出现异常时主动对其进行收集上报，分析原因和影响后制定下一步解决方案。 任何人不能保证他写的项目0bug（除非没人用），但是如何更好、更快的解决">
-<meta property="og:locale" content="default">
-<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/c24ebc18gy1fqiduusb0vj20yl0ai74a.jpg">
-<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/c24ebc18gy1fqie2mazulj20u607xdfy.jpg">
-<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/c24ebc18gy1fqidv04jotj20zu0afaaa.jpg">
-<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/c24ebc18gy1fqidv311b1j21260ihgm4.jpg">
-<meta property="og:updated_time" content="2018-09-04T06:56:28.000Z">
+<meta property="og:image" content="https://i.loli.net/2019/12/24/2t7UArEBQvPL9WN.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/24/z7KdEZuIFaegXf3.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/24/G3NRvWolaqtZVQO.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/24/XCNtJrf8UhEzdPu.jpg">
+<meta property="og:updated_time" content="2019-12-24T06:04:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sentry前端部署基础篇（VUE + Axios）">
 <meta name="twitter:description" content="凡事只要有可能出错,那就一定会出错  对于任何一个项目而言，本地测试肯定做不到100%覆盖，而且，我们也不能保证用户能按照我们的预期进行操作，其实对我而言，用户才是最好的测试者，但是我们不能奢求每个用户遇到问题时候都会主动向我们反馈。 故而，我们需要在项目出现异常时主动对其进行收集上报，分析原因和影响后制定下一步解决方案。 任何人不能保证他写的项目0bug（除非没人用），但是如何更好、更快的解决">
-<meta name="twitter:image" content="http://wx2.sinaimg.cn/mw690/c24ebc18gy1fqiduusb0vj20yl0ai74a.jpg">
+<meta name="twitter:image" content="https://i.loli.net/2019/12/24/2t7UArEBQvPL9WN.jpg">
   
     <link rel="alternative" href="/atom.xml" title="LonHon的个人博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="https://avatars2.githubusercontent.com/u/19330620?s=460&v=4">
+    <link rel="icon" href="https://wx2.sinaimg.cn/mw690/c24ebc18gy1fof5s9ziahj205u05ut8u.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -57,7 +55,7 @@ ga('send', 'pageview');
   
 
 </head>
-</html>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -67,7 +65,7 @@ ga('send', 'pageview');
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="https://avatars2.githubusercontent.com/u/19330620?s=460&amp;v=4" class="js-avatar">
+			<img src="https://wx2.sinaimg.cn/mw690/c24ebc18gy1fof5s9ziahj205u05ut8u.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">LonHon</a></h1>
@@ -107,7 +105,7 @@ ga('send', 'pageview');
 		        
 					<a class="segmentfault" target="_blank" href="https://segmentfault.com/u/lonhon" title="segmentfault"><i class="icon-segmentfault"></i></a>
 		        
-					<a class="mail" target="_blank" href="mailto:lonhontop@gmail.com" title="mail"><i class="icon-mail"></i></a>
+					<a class="mail" target="_blank" href="mailto:easylhong@126.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -125,7 +123,7 @@ ga('send', 'pageview');
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://avatars2.githubusercontent.com/u/19330620?s=460&amp;v=4" class="js-avatar">
+				<img src="https://wx2.sinaimg.cn/mw690/c24ebc18gy1fof5s9ziahj205u05ut8u.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">LonHon</h1>
@@ -148,7 +146,7 @@ ga('send', 'pageview');
 			        
 						<a class="segmentfault" target="_blank" href="https://segmentfault.com/u/lonhon" title="segmentfault"><i class="icon-segmentfault"></i></a>
 			        
-						<a class="mail" target="_blank" href="mailto:lonhontop@gmail.com" title="mail"><i class="icon-mail"></i></a>
+						<a class="mail" target="_blank" href="mailto:easylhong@126.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -174,7 +172,7 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Sentry-deploy-simple" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-Sentry-deploy-simple" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -216,7 +214,7 @@ ga('send', 'pageview');
 <p>git仓库： <a href="https://github.com/getsentry/sentry" target="_blank" rel="noopener">https://github.com/getsentry/sentry</a></p>
 <p>社区除了git issue外还可以关注 <a href="https://forum.sentry.io/" target="_blank" rel="noopener">https://forum.sentry.io/</a></p>
 <p>如果想先体验的话建议注册账号，在其SaaS平台上练手。不自己搭建Sentry服务器的话也可以升级为付费服务。</p>
-<h4 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h4><p>前端<a href="mailto:Vue@2.5.9" target="_blank" rel="noopener">Vue@2.5.9</a> + axios，暂时只用关注这俩就行。</p>
+<h4 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h4><p>前端Vue@2.5.9 + axios，暂时只用关注这俩就行。</p>
 <h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><ol>
 <li>注册账号</li>
 <li>创建项目</li>
@@ -228,12 +226,12 @@ ga('send', 'pageview');
 <h4 id="1-注册账号"><a href="#1-注册账号" class="headerlink" title="1.注册账号"></a>1.注册账号</h4><p>步骤略…</p>
 <p><strong> PS: </strong> 创建完成后进入dashbord点击左下角头像选择account，然后在Appearance中调整至本地时区，不然后面看到监控的bug创建时间会有差别。</p>
 <h4 id="2-创建项目"><a href="#2-创建项目" class="headerlink" title="2.创建项目"></a>2.创建项目</h4><p>注册好后我们可以通过右上角 <strong> New Project </strong> 来创建，然后选择相应的项目，这里还是以vue为例子，如下图:</p>
-<p><img alt="1" src="http://wx2.sinaimg.cn/mw690/c24ebc18gy1fqiduusb0vj20yl0ai74a.jpg" width="650"></p>
+<p><img alt="1" src="https://i.loli.net/2019/12/24/2t7UArEBQvPL9WN.jpg" width="650"></p>
 
 <p>接下来会进入到<em>介绍页面</em>了，到这里第一步就算完成，<strong>请详细阅读该页面</strong>。</p>
 <h4 id="3-前端项目部署"><a href="#3-前端项目部署" class="headerlink" title="3.前端项目部署"></a>3.前端项目部署</h4><p>切回本地项目,通过以下命令安装raven-js<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i raven-js --save</span><br></pre></td></tr></table></figure></p>
 <p>然后打开main.js，如下图进行部署：</p>
-<p><img alt="2" src="http://wx2.sinaimg.cn/mw690/c24ebc18gy1fqie2mazulj20u607xdfy.jpg" width="650"></p>
+<p><img alt="2" src="https://i.loli.net/2019/12/24/z7KdEZuIFaegXf3.jpg" width="650"></p>
 
 <p>这里和<em>介绍页面</em>有点差别的地方在于我将raven挂载到了window对象上，这是为了方便后续捕捉异步操作和接口中的异常。</p>
 <p>记得把DSN（图片打码处）换成自己的，在<em>介绍页面</em>中可以找到，如果已经离开该页面，可以在 project-settings 中找到它。</p>
@@ -241,10 +239,10 @@ ga('send', 'pageview');
 <h4 id="4-自动捕捉异常-查看"><a href="#4-自动捕捉异常-查看" class="headerlink" title="4.自动捕捉异常 + 查看"></a>4.自动捕捉异常 + 查看</h4><p>ok，部署操作已经完成，接下来我们主动上报一个bug试试水。</p>
 <p>在App.vue的mounted中写一个bug：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.aaa.bbb());</span><br></pre></td></tr></table></figure></p>
 <p>然后刷新页面触发bug，这时可以通过chrome调试工具查看上报异常的网络请求。</p>
-<p><img alt="3" src="http://wx1.sinaimg.cn/mw690/c24ebc18gy1fqidv04jotj20zu0afaaa.jpg" width="800"></p>
+<p><img alt="3" src="https://i.loli.net/2019/12/24/G3NRvWolaqtZVQO.jpg" width="800"></p>
 
 <p>回到Sentry中，不出意外此时就可以看到相应的错误信息提示。</p>
-<p><img alt="4" src="http://wx4.sinaimg.cn/mw690/c24ebc18gy1fqidv311b1j21260ihgm4.jpg" width="800"></p>
+<p><img alt="4" src="https://i.loli.net/2019/12/24/XCNtJrf8UhEzdPu.jpg" width="800"></p>
 
 <p>点进去后就能看到更多的错误信息还有用户信息，包括浏览器、版本、ip等</p>
 <h4 id="5-主动捕捉异常"><a href="#5-主动捕捉异常" class="headerlink" title="5.主动捕捉异常"></a>5.主动捕捉异常</h4><p>通过上面的操作我们已经能成功监控到vue中的错误、异常，但是还不能捕捉到异步操作、接口请求中的错误，比如接口返回404、500等信息，此时我们可以通过raven.caputureException()进行主动上报。</p>
@@ -408,14 +406,12 @@ ga('send', 'pageview');
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
-    	<div class="footer-right">
-    		&copy; 2019 LonHon
+    	<div class="footer-left">
+    		&copy; 2021 LonHon
     	</div>
-      <!-- 
-        <div class="footer-left">
-          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-        </div>
-       -->
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
     </div>
   </div>
 </footer>
@@ -506,15 +502,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AOP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">AJAX</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">node</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AOP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -526,19 +522,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">优化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ECharts</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -550,7 +534,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ECharts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">通知</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ES2015</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -562,11 +562,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ES2015</a>
+                <a href="javascript:void(0)" class="js-tag color5">puppeteer</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">String对象</a>
+                <a href="javascript:void(0)" class="js-tag color1">UI testing</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -586,7 +594,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">String对象</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -595,6 +603,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -630,6 +642,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">编辑器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">eslint</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
@@ -642,7 +662,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
@@ -686,6 +706,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
+              <a href="https://www.w3cvip.org/," target="_blank" class="search-title"><i class="icon-quo-left icon"></i>w3c前端社区</a>
+            </li>
+          
+            <li class="search-li">
               <a href="https://moonou.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Moonou Blog</a>
             </li>
           
@@ -697,7 +721,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">94生人 &lt;br&gt; &lt;br&gt; 喜热厌冷 &lt;br&gt; 喜电脑、电影、港风 &lt;br&gt; &lt;br&gt;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">94生人 &lt;br&gt; &lt;br&gt; 喜热怕冷 &lt;br&gt; 喜电脑、电影、Eason &lt;br&gt; &lt;br&gt;</div>
   	  	
     	</section>
     

@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta name="keywords" content="lonhon lonhon的博客 前端博客 游龙翔隼">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://lonhon.top">
   <title>Node+Express接口代理，为更好的开发体验 | LonHon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -16,19 +15,18 @@
 <meta property="og:url" content="http://lonhon.top/2018/02/27/AJAX-proxy-by-node/index.html">
 <meta property="og:site_name" content="LonHon的个人博客">
 <meta property="og:description" content="同源策略：协议+主机名+端口号相同  在前后端分离开发过程中，资源请求跨域限制问题是人人都会面对的一种情况。跨域限制产生的原因是浏览器的“同源策略”，这也是基于网络安全考量所提出的。 网上也给出了很多相应的跨域解决方案例如jsonp、CORS、WS、代理服务器.本文就 “代理服务器” 的原理和实战展开，让大家快速掌握并解决开发环境下跨域的问题。">
-<meta property="og:locale" content="default">
-<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/c24ebc18gy1fovd6emo0pj20cc01tmx3.jpg">
-<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/c24ebc18gy1fow80315iij20jh08xmx3.jpg">
-<meta property="og:updated_time" content="2018-09-04T06:56:30.000Z">
+<meta property="og:image" content="https://i.loli.net/2019/12/20/vqRrLl6FWMYnopX.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/20/cERQiWySFZIsdwm.jpg">
+<meta property="og:updated_time" content="2019-12-20T01:13:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node+Express接口代理，为更好的开发体验">
 <meta name="twitter:description" content="同源策略：协议+主机名+端口号相同  在前后端分离开发过程中，资源请求跨域限制问题是人人都会面对的一种情况。跨域限制产生的原因是浏览器的“同源策略”，这也是基于网络安全考量所提出的。 网上也给出了很多相应的跨域解决方案例如jsonp、CORS、WS、代理服务器.本文就 “代理服务器” 的原理和实战展开，让大家快速掌握并解决开发环境下跨域的问题。">
-<meta name="twitter:image" content="http://wx1.sinaimg.cn/mw690/c24ebc18gy1fovd6emo0pj20cc01tmx3.jpg">
+<meta name="twitter:image" content="https://i.loli.net/2019/12/20/vqRrLl6FWMYnopX.jpg">
   
     <link rel="alternative" href="/atom.xml" title="LonHon的个人博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="https://avatars2.githubusercontent.com/u/19330620?s=460&v=4">
+    <link rel="icon" href="https://wx2.sinaimg.cn/mw690/c24ebc18gy1fof5s9ziahj205u05ut8u.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -55,7 +53,7 @@ ga('send', 'pageview');
   
 
 </head>
-</html>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -65,7 +63,7 @@ ga('send', 'pageview');
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="https://avatars2.githubusercontent.com/u/19330620?s=460&amp;v=4" class="js-avatar">
+			<img src="https://wx2.sinaimg.cn/mw690/c24ebc18gy1fof5s9ziahj205u05ut8u.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">LonHon</a></h1>
@@ -105,7 +103,7 @@ ga('send', 'pageview');
 		        
 					<a class="segmentfault" target="_blank" href="https://segmentfault.com/u/lonhon" title="segmentfault"><i class="icon-segmentfault"></i></a>
 		        
-					<a class="mail" target="_blank" href="mailto:lonhontop@gmail.com" title="mail"><i class="icon-mail"></i></a>
+					<a class="mail" target="_blank" href="mailto:easylhong@126.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -123,7 +121,7 @@ ga('send', 'pageview');
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://avatars2.githubusercontent.com/u/19330620?s=460&amp;v=4" class="js-avatar">
+				<img src="https://wx2.sinaimg.cn/mw690/c24ebc18gy1fof5s9ziahj205u05ut8u.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">LonHon</h1>
@@ -146,7 +144,7 @@ ga('send', 'pageview');
 			        
 						<a class="segmentfault" target="_blank" href="https://segmentfault.com/u/lonhon" title="segmentfault"><i class="icon-segmentfault"></i></a>
 			        
-						<a class="mail" target="_blank" href="mailto:lonhontop@gmail.com" title="mail"><i class="icon-mail"></i></a>
+						<a class="mail" target="_blank" href="mailto:easylhong@126.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -172,7 +170,7 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-AJAX-proxy-by-node" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-AJAX-proxy-by-node" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -206,10 +204,10 @@ ga('send', 'pageview');
 <li>直接调用后台同事本地服务器上的接口。跨域问题？？？</li>
 </ol>
 <p>下来我们来谈谈使用代理服务器作为我们跨域解决方案，还是以 WWH 原则进行讲述。</p>
-<h3 id="WHAT-什么是代理服务器？"><a href="#WHAT-什么是代理服务器？" class="headerlink" title="WHAT 什么是代理服务器？"></a>WHAT 什么是代理服务器？</h3><p>假设我在本地主机A上开发项目，需要调用同事服务器B上的接口，直接$.get( ‘<a href="http://192.168.11.111/userInfo&#39;" target="_blank" rel="noopener">http://192.168.11.111/userInfo&#39;</a> )，肯定会遇到不允许跨域的问题，此时通过一个允许跨域的服务器C对服务器B的接口进行访问，就可以解决这个问题了。<br>所以，代理服务器之所以称之为代理，是其充当了一个桥梁的角色。</p>
+<h3 id="WHAT-什么是代理服务器？"><a href="#WHAT-什么是代理服务器？" class="headerlink" title="WHAT 什么是代理服务器？"></a>WHAT 什么是代理服务器？</h3><p>假设我在本地主机A上开发项目，需要调用同事服务器B上的接口，直接$.get( ‘<a href="http://192.168.11.111/userInfo" target="_blank" rel="noopener">http://192.168.11.111/userInfo</a>‘ )，肯定会遇到不允许跨域的问题，此时通过一个允许跨域的服务器C对服务器B的接口进行访问，就可以解决这个问题了。<br>所以，代理服务器之所以称之为代理，是其充当了一个桥梁的角色。</p>
 <h3 id="WHY-为什么使用这种方案？"><a href="#WHY-为什么使用这种方案？" class="headerlink" title="WHY 为什么使用这种方案？"></a>WHY 为什么使用这种方案？</h3><p>代理服务器最直接的好处就是一次配置，长期使用。</p>
 <p>通过我们本地建立代理服务器后，以后每次需要面对上述情况时，就可以拿出来使用，最多切换一下目标服务器IP地址。<br>在调试完成后，我们可以直接 CTRL+H 把proxy的IP替换就可以上传到服务器了。</p>
-<p><img src="http://wx1.sinaimg.cn/mw690/c24ebc18gy1fovd6emo0pj20cc01tmx3.jpg" width="400"></p>
+<p><img src="https://i.loli.net/2019/12/20/vqRrLl6FWMYnopX.jpg" width="400"></p>
 
 <p>上图是我在开发中用到的接口服务器IP</p>
 <h3 id="HOW-如何使用？"><a href="#HOW-如何使用？" class="headerlink" title="HOW 如何使用？"></a>HOW 如何使用？</h3><p>首先说下运行环境，由于我们是用Node+Express搭建的代理服务器请求其它服务器上的数据，所以我们一共需要Node+Express+Request这3个玩意，接下来进入coding。</p>
@@ -219,8 +217,8 @@ ga('send', 'pageview');
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">const</span> request = <span class="built_in">require</span>(<span class="string">'request'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"></span><br><span class="line"><span class="comment">//let serverUrl='http://192.168.18.158';    //同事A的服务器地址</span></span><br><span class="line"><span class="keyword">let</span> serverUrl=<span class="string">'http://192.168.18.182'</span>;    <span class="comment">//同事B的服务器地址</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setAllowHeader</span>(<span class="params">res</span>)</span>&#123;   <span class="comment">// 配置响应header 允许跨域访问</span></span><br><span class="line">    res.header(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"*"</span>);</span><br><span class="line">    res.header(<span class="string">'Access-Control-Allow-Methods'</span>, <span class="string">'GET, POST, OPTIONS'</span>);</span><br><span class="line">    res.header(<span class="string">"Access-Control-Allow-Headers"</span>, <span class="string">"X-Requested-With"</span>);</span><br><span class="line">    res.header(<span class="string">'Access-Control-Allow-Headers'</span>, <span class="string">'Content-Type'</span>);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">app.use(<span class="string">'/test'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;   <span class="comment">//测试，可删除</span></span><br><span class="line">    res.send(<span class="string">'Server is working'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.use(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;   <span class="comment">//转发请求并返回response</span></span><br><span class="line">    res = setAllowHeader(res);</span><br><span class="line">    <span class="keyword">let</span> url = serverUrl + req.url;</span><br><span class="line">    req.pipe(request(url)).pipe(res);</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line">app.listen(<span class="number">3000</span>,<span class="string">'127.0.0.1'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;  <span class="comment">//代理服务器地址和端口</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'server is running at port 3000'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>是的，只需要手写一个js文件就可以了，具体内容可见注释。</p>
 <h4 id="3-品尝果实"><a href="#3-品尝果实" class="headerlink" title="3.品尝果实"></a>3.品尝果实</h4><p>切换到第1步中未关闭的命令行，输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node proxy.js</span><br></pre></td></tr></table></figure></p>
-<p>然后浏览器中输入 “<a href="http://localhost:3000/test&quot;" target="_blank" rel="noopener">http://localhost:3000/test&quot;</a> ,此时看到界面上的 “Server is working” 则表示代理服务器已经运行，现在可以试试访问同事的接口了。<br>例：<br>访问服务器 192.168.18.182 上的 ‘/versioninfo/getFirstPageData’ 接口数据</p>
-<p><img src="http://wx3.sinaimg.cn/mw690/c24ebc18gy1fow80315iij20jh08xmx3.jpg" width="600"></p>
+<p>然后浏览器中输入 “<a href="http://localhost:3000/test" target="_blank" rel="noopener">http://localhost:3000/test</a>“ ,此时看到界面上的 “Server is working” 则表示代理服务器已经运行，现在可以试试访问同事的接口了。<br>例：<br>访问服务器 192.168.18.182 上的 ‘/versioninfo/getFirstPageData’ 接口数据</p>
+<p><img src="https://i.loli.net/2019/12/20/cERQiWySFZIsdwm.jpg" width="600"></p>
 
 <p>可以看到我们直接访问刚刚创建的代理服务器+接口，已经能够拿到数据。</p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>本篇旨在让大家便捷的解决开发过程中跨域的问题，希望喜欢。</p>
@@ -368,14 +366,12 @@ ga('send', 'pageview');
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
-    	<div class="footer-right">
-    		&copy; 2019 LonHon
+    	<div class="footer-left">
+    		&copy; 2021 LonHon
     	</div>
-      <!-- 
-        <div class="footer-left">
-          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-        </div>
-       -->
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
     </div>
   </div>
 </footer>
@@ -466,15 +462,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AOP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">AJAX</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">node</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AOP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -486,19 +482,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">优化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ECharts</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -510,7 +494,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ECharts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">通知</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ES2015</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -522,11 +522,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ES2015</a>
+                <a href="javascript:void(0)" class="js-tag color5">puppeteer</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">String对象</a>
+                <a href="javascript:void(0)" class="js-tag color1">UI testing</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -546,7 +554,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">String对象</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -555,6 +563,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -590,6 +602,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">编辑器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">eslint</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
@@ -602,7 +622,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
@@ -646,6 +666,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
+              <a href="https://www.w3cvip.org/," target="_blank" class="search-title"><i class="icon-quo-left icon"></i>w3c前端社区</a>
+            </li>
+          
+            <li class="search-li">
               <a href="https://moonou.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Moonou Blog</a>
             </li>
           
@@ -657,7 +681,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">94生人 &lt;br&gt; &lt;br&gt; 喜热厌冷 &lt;br&gt; 喜电脑、电影、港风 &lt;br&gt; &lt;br&gt;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">94生人 &lt;br&gt; &lt;br&gt; 喜热怕冷 &lt;br&gt; 喜电脑、电影、Eason &lt;br&gt; &lt;br&gt;</div>
   	  	
     	</section>
     

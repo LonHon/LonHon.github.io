@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta name="keywords" content="lonhon lonhon的博客 前端博客 游龙翔隼">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://lonhon.top">
   <title>填坑-输入中文时，拼音阶段会触发input事件 | LonHon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -16,7 +15,6 @@
 <meta property="og:url" content="http://lonhon.top/2017/10/09/problem-when-Chinese-input/index.html">
 <meta property="og:site_name" content="LonHon的个人博客">
 <meta property="og:description" content="问题：监听文本输入框的input事件，在拼写汉字（输入法）但汉字并未实际填充到文本框中（选词）时会触发input事件">
-<meta property="og:locale" content="default">
 <meta property="og:image" content="http://lonhon.top/assets/post/input1.gif">
 <meta property="og:image" content="http://lonhon.top/assets/post/input2.gif">
 <meta property="og:updated_time" content="2018-09-04T06:56:28.000Z">
@@ -28,7 +26,7 @@
     <link rel="alternative" href="/atom.xml" title="LonHon的个人博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="https://avatars2.githubusercontent.com/u/19330620?s=460&v=4">
+    <link rel="icon" href="https://wx2.sinaimg.cn/mw690/c24ebc18gy1fof5s9ziahj205u05ut8u.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -55,7 +53,7 @@ ga('send', 'pageview');
   
 
 </head>
-</html>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -65,7 +63,7 @@ ga('send', 'pageview');
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="https://avatars2.githubusercontent.com/u/19330620?s=460&amp;v=4" class="js-avatar">
+			<img src="https://wx2.sinaimg.cn/mw690/c24ebc18gy1fof5s9ziahj205u05ut8u.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">LonHon</a></h1>
@@ -105,7 +103,7 @@ ga('send', 'pageview');
 		        
 					<a class="segmentfault" target="_blank" href="https://segmentfault.com/u/lonhon" title="segmentfault"><i class="icon-segmentfault"></i></a>
 		        
-					<a class="mail" target="_blank" href="mailto:lonhontop@gmail.com" title="mail"><i class="icon-mail"></i></a>
+					<a class="mail" target="_blank" href="mailto:easylhong@126.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -123,7 +121,7 @@ ga('send', 'pageview');
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://avatars2.githubusercontent.com/u/19330620?s=460&amp;v=4" class="js-avatar">
+				<img src="https://wx2.sinaimg.cn/mw690/c24ebc18gy1fof5s9ziahj205u05ut8u.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">LonHon</h1>
@@ -146,7 +144,7 @@ ga('send', 'pageview');
 			        
 						<a class="segmentfault" target="_blank" href="https://segmentfault.com/u/lonhon" title="segmentfault"><i class="icon-segmentfault"></i></a>
 			        
-						<a class="mail" target="_blank" href="mailto:lonhontop@gmail.com" title="mail"><i class="icon-mail"></i></a>
+						<a class="mail" target="_blank" href="mailto:easylhong@126.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -172,7 +170,7 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-problem-when-Chinese-input" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-problem-when-Chinese-input" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -335,14 +333,12 @@ ga('send', 'pageview');
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
-    	<div class="footer-right">
-    		&copy; 2019 LonHon
+    	<div class="footer-left">
+    		&copy; 2021 LonHon
     	</div>
-      <!-- 
-        <div class="footer-left">
-          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-        </div>
-       -->
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
     </div>
   </div>
 </footer>
@@ -433,15 +429,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AOP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">AJAX</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">node</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AOP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -453,19 +449,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">优化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ECharts</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -477,7 +461,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ECharts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">通知</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ES2015</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -489,11 +489,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ES2015</a>
+                <a href="javascript:void(0)" class="js-tag color5">puppeteer</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">String对象</a>
+                <a href="javascript:void(0)" class="js-tag color1">UI testing</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -513,7 +521,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">String对象</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -522,6 +530,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -557,6 +569,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">编辑器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">eslint</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
@@ -569,7 +589,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
@@ -613,6 +633,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
+              <a href="https://www.w3cvip.org/," target="_blank" class="search-title"><i class="icon-quo-left icon"></i>w3c前端社区</a>
+            </li>
+          
+            <li class="search-li">
               <a href="https://moonou.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Moonou Blog</a>
             </li>
           
@@ -624,7 +648,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">94生人 &lt;br&gt; &lt;br&gt; 喜热厌冷 &lt;br&gt; 喜电脑、电影、港风 &lt;br&gt; &lt;br&gt;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">94生人 &lt;br&gt; &lt;br&gt; 喜热怕冷 &lt;br&gt; 喜电脑、电影、Eason &lt;br&gt; &lt;br&gt;</div>
   	  	
     	</section>
     

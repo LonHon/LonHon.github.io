@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta name="keywords" content="lonhon lonhon的博客 前端博客 游龙翔隼">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://lonhon.top">
   <title>记一次vue项目优化 | LonHon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -16,21 +15,20 @@
 <meta property="og:url" content="http://lonhon.top/2019/04/08/Amazon-project-optimize-records/index.html">
 <meta property="og:site_name" content="LonHon的个人博客">
 <meta property="og:description" content="记录一个前端项目优化的路程，效果如上图。 接下来我们在正文讲解具体优化步骤、思路以及优化前后对比，另外还有/static下文件被打包的解决方法。 PS：正文中图片模糊的话请右键“在新标签页打开图片”查看原图">
-<meta property="og:locale" content="default">
-<meta property="og:image" content="http://wx1.sinaimg.cn/large/c24ebc18gy1g1vc83wu25j20al0ao3z3.jpg">
-<meta property="og:image" content="http://wx3.sinaimg.cn/large/c24ebc18gy1g1vc72p8ovj21fb0q8thn.jpg">
-<meta property="og:image" content="http://wx4.sinaimg.cn/large/c24ebc18gy1g1vc7b7s1kj21fb0q5dqn.jpg">
-<meta property="og:image" content="http://wx3.sinaimg.cn/large/c24ebc18gy1g1vc77g0o5j21f70q4gw4.jpg">
-<meta property="og:updated_time" content="2019-04-08T14:21:55.931Z">
+<meta property="og:image" content="https://i.loli.net/2019/12/20/N179GLrMWfBHXDI.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/20/oPXBTD8t6uwbg9U.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/20/Rl7qj3HrYkxdSKy.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/20/cz8Aq9H2mGtFOsU.jpg">
+<meta property="og:updated_time" content="2019-12-20T06:24:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记一次vue项目优化">
 <meta name="twitter:description" content="记录一个前端项目优化的路程，效果如上图。 接下来我们在正文讲解具体优化步骤、思路以及优化前后对比，另外还有/static下文件被打包的解决方法。 PS：正文中图片模糊的话请右键“在新标签页打开图片”查看原图">
-<meta name="twitter:image" content="http://wx1.sinaimg.cn/large/c24ebc18gy1g1vc83wu25j20al0ao3z3.jpg">
+<meta name="twitter:image" content="https://i.loli.net/2019/12/20/N179GLrMWfBHXDI.jpg">
   
     <link rel="alternative" href="/atom.xml" title="LonHon的个人博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="https://avatars2.githubusercontent.com/u/19330620?s=460&v=4">
+    <link rel="icon" href="https://wx2.sinaimg.cn/mw690/c24ebc18gy1fof5s9ziahj205u05ut8u.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -57,7 +55,7 @@ ga('send', 'pageview');
   
 
 </head>
-</html>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -67,7 +65,7 @@ ga('send', 'pageview');
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="https://avatars2.githubusercontent.com/u/19330620?s=460&amp;v=4" class="js-avatar">
+			<img src="https://wx2.sinaimg.cn/mw690/c24ebc18gy1fof5s9ziahj205u05ut8u.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">LonHon</a></h1>
@@ -107,7 +105,7 @@ ga('send', 'pageview');
 		        
 					<a class="segmentfault" target="_blank" href="https://segmentfault.com/u/lonhon" title="segmentfault"><i class="icon-segmentfault"></i></a>
 		        
-					<a class="mail" target="_blank" href="mailto:lonhontop@gmail.com" title="mail"><i class="icon-mail"></i></a>
+					<a class="mail" target="_blank" href="mailto:easylhong@126.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -125,7 +123,7 @@ ga('send', 'pageview');
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://avatars2.githubusercontent.com/u/19330620?s=460&amp;v=4" class="js-avatar">
+				<img src="https://wx2.sinaimg.cn/mw690/c24ebc18gy1fof5s9ziahj205u05ut8u.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">LonHon</h1>
@@ -148,7 +146,7 @@ ga('send', 'pageview');
 			        
 						<a class="segmentfault" target="_blank" href="https://segmentfault.com/u/lonhon" title="segmentfault"><i class="icon-segmentfault"></i></a>
 			        
-						<a class="mail" target="_blank" href="mailto:lonhontop@gmail.com" title="mail"><i class="icon-mail"></i></a>
+						<a class="mail" target="_blank" href="mailto:easylhong@126.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -174,7 +172,7 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Amazon-project-optimize-records" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-Amazon-project-optimize-records" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -194,14 +192,14 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><br>    <img src="http://wx1.sinaimg.cn/large/c24ebc18gy1g1vc83wu25j20al0ao3z3.jpg"><br></p>
+        <p><br>    <img src="https://i.loli.net/2019/12/20/N179GLrMWfBHXDI.jpg"><br></p>
 
 <p>记录一个前端项目优化的路程，效果如上图。</p>
 <p>接下来我们在正文讲解具体优化步骤、思路以及优化前后对比，另外还有/static下文件被打包的解决方法。</p>
 <p>PS：正文中图片模糊的话请右键“在新标签页打开图片”查看原图</p>
 <a id="more"></a>
 <h2 id="WHY，为什么进行优化"><a href="#WHY，为什么进行优化" class="headerlink" title="WHY，为什么进行优化"></a>WHY，为什么进行优化</h2><p>本周在做的一个vue项目进入到测试阶段，在打包时候发现build耗时过长（近3分钟），觉得是有点异常，有过更复杂的项目但是耗时基本也在1分钟内，所以运行<code>npm run build --report</code>生成打包的矩阵树图（Treemap）来进行排查，report截图如下：</p>
-<p><img width="900" src="http://wx3.sinaimg.cn/large/c24ebc18gy1g1vc72p8ovj21fb0q8thn.jpg"></p>
+<p><img width="900" src="https://i.loli.net/2019/12/20/oPXBTD8t6uwbg9U.jpg"></p>
 <p>发现项目中Location页面（用于数据可视化地理空间展示）的可视化功能所用到的几个国家map文件赫然出现在最前面，而项目打包后尺寸也达到了<strong>8.76M</strong>。</p>
 <p>另外，在进入该页面时发现页面加载耗时明显增加（1.js有6.77M），说明页面渲染被堵塞。</p>
 <h2 id="HOW，如何进行优化"><a href="#HOW，如何进行优化" class="headerlink" title="HOW，如何进行优化"></a>HOW，如何进行优化</h2><h3 id="第一步，优化静态资源"><a href="#第一步，优化静态资源" class="headerlink" title="第一步，优化静态资源"></a>第一步，优化静态资源</h3><p>分析后得出结论：<strong>map文件被打包到1.js中导致build和页面渲染时间增多</strong>。</p>
@@ -220,19 +218,19 @@ ga('send', 'pageview');
 <p>所以最终是在index.html文件中直接使用script标签引入map资源，并使用defer方式避免堵塞页面正常渲染</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">defer</span> <span class="attr">src</span>=<span class="string">"/static/map1.js"</span>/&gt;</span><span class="undefined"></span></span><br></pre></td></tr></table></figure>
 <h3 id="第一步优化结果"><a href="#第一步优化结果" class="headerlink" title="第一步优化结果"></a>第一步优化结果</h3><p>接下来看看优化效果：</p>
-<p><img width="900" src="http://wx4.sinaimg.cn/large/c24ebc18gy1g1vc7b7s1kj21fb0q5dqn.jpg"></p>
+<p><img width="900" src="https://i.loli.net/2019/12/20/Rl7qj3HrYkxdSKy.jpg"></p>
 <p>可以看到现在打包后项目体积优化到<strong>2M</strong>。</p>
 <p>此外，实际build时间也从3min减少到50s左右，Location页面渲染时间过长的问题也得到解决。</p>
 <h3 id="第二步，分离echarts"><a href="#第二步，分离echarts" class="headerlink" title="第二步，分离echarts"></a>第二步，分离echarts</h3><p>虽然项目体积已经锐减，但是个人对2M这个数字还不够满意，可以看到现在图中Treemap sizes显示最大的文件是vendor.js，vendor.js里面放着项目的一些依赖模块如vue、vue-route、axios、element-ui、echarts等，同时也可以看到现在最大的模块是echarts，所以接下来试着将echarts通过cdn的方式引入来达到减少项目体积的目的。</p>
 <p>此处优化关键字：<strong>webpack externals</strong>，具体介绍见<a href="https://webpack.js.org/configuration/externals/" target="_blank" rel="noopener">webpack文档</a> 。我们可以简单理解为从cdn加载第三方模块，从而减少服务器压力和项目体积。</p>
 <p>在/build/webpack.prod.conf.js文件中添加externals(vue-cli版本不同会有差异)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  // other setting</span><br><span class="line">  externals: &#123;</span><br><span class="line">    &apos;echarts&apos;: &apos;echarts&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>在index.html中使用script标签从cdn引入echarts<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/echarts/4.1.0/echarts.min.js"</span>&gt;</span><span class="undefined">	</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>在index.html中使用script标签从cdn引入echarts<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/echarts/4.1.0/echarts.min.js"</span>&gt;</span><span class="undefined">	</span></span><br><span class="line"><span class="javascript">&lt;div id=<span class="string">"app"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br></pre></td></tr></table></figure></p>
 <p>因为主要是一个可视化项目，用到echarts页面较多，所以这里在app之前就引入了。</p>
 <p>通过externals方式分离echarts或其它模块，不用修改main.js里面的逻辑。</p>
 <p><em>注1：也可以通过此种方式对其它模块如element-ui进行拆分</em></p>
 <p><em>注2：针对echarts，也可以通过按需引入的方式达到优化效果。</em></p>
 <h3 id="第二步优化结果"><a href="#第二步优化结果" class="headerlink" title="第二步优化结果"></a>第二步优化结果</h3><p>再次运行<code>npm run build --report</code>查看项目打包情况：</p>
-<p><img width="900" src="http://wx3.sinaimg.cn/large/c24ebc18gy1g1vc77g0o5j21f70q4gw4.jpg"></p>
+<p><img width="900" src="https://i.loli.net/2019/12/20/cz8Aq9H2mGtFOsU.jpg"></p>
 <p>可以看到项目体积已经优化到<strong>1.26M</strong>，vendor.js中也看不到echarts的踪影了。</p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>至此本文结束，实际开发中各个项目的主要优化点都各不相同，需要在开发过程中一一发掘。</p>
 <p>本文主要想提供一些优化思路及手段，即如何定位（通过build report，查看页面加载时间）问题，然后再解决这些问题。</p>
@@ -323,11 +321,11 @@ ga('send', 'pageview');
   
 <nav id="article-nav">
   
-    <a href="/9999/09/09/Information-changeBlog/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/12/24/vscode-eslint-setting/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          一天一点，成为20%
+          VSCode开启eslint检测（Vue项目）
         
       </div>
     </a>
@@ -376,14 +374,12 @@ ga('send', 'pageview');
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
-    	<div class="footer-right">
-    		&copy; 2019 LonHon
+    	<div class="footer-left">
+    		&copy; 2021 LonHon
     	</div>
-      <!-- 
-        <div class="footer-left">
-          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-        </div>
-       -->
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
     </div>
   </div>
 </footer>
@@ -474,15 +470,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AOP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">AJAX</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">node</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AOP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -494,19 +490,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">优化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ECharts</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -518,7 +502,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ECharts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">通知</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ES2015</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -530,11 +530,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ES2015</a>
+                <a href="javascript:void(0)" class="js-tag color5">puppeteer</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">String对象</a>
+                <a href="javascript:void(0)" class="js-tag color1">UI testing</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -554,7 +562,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">String对象</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -563,6 +571,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -598,6 +610,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">编辑器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">eslint</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
@@ -610,7 +630,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
@@ -654,6 +674,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
+              <a href="https://www.w3cvip.org/," target="_blank" class="search-title"><i class="icon-quo-left icon"></i>w3c前端社区</a>
+            </li>
+          
+            <li class="search-li">
               <a href="https://moonou.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Moonou Blog</a>
             </li>
           
@@ -665,7 +689,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">94生人 &lt;br&gt; &lt;br&gt; 喜热厌冷 &lt;br&gt; 喜电脑、电影、港风 &lt;br&gt; &lt;br&gt;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">94生人 &lt;br&gt; &lt;br&gt; 喜热怕冷 &lt;br&gt; 喜电脑、电影、Eason &lt;br&gt; &lt;br&gt;</div>
   	  	
     	</section>
     

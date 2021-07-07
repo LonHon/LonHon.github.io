@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta name="keywords" content="lonhon lonhon的博客 前端博客 游龙翔隼">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://lonhon.top">
   <title>图片优化-前端优化篇 | LonHon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -16,23 +15,22 @@
 <meta property="og:url" content="http://lonhon.top/2018/02/12/image-resource-optimization/index.html">
 <meta property="og:site_name" content="LonHon的个人博客">
 <meta property="og:description" content="前端不止，优化不息  作为一名前端er，其实一直我对自己的定位就是服务员，为用户提供好的服务（上菜快）和产品（好吃）。产品这一块需要和PM一起努力，但是服务这一块我们可以根据自身的能力做到更好。 谈到前端优化，图片资源是重中之重。时至今日，页面中单纯显示文字的用户体验是不敢相信的糟糕场景，就拿float一开始设计的目的来说，也是为了满足图文混排的需求。但是图片的出现也让网页越来越胖，服务器每次都">
-<meta property="og:locale" content="default">
-<meta property="og:image" content="https://wx1.sinaimg.cn/large/c24ebc18gy1fofb0wtl9tj20yy0h9gmn.jpg">
-<meta property="og:image" content="https://wx1.sinaimg.cn/mw690/c24ebc18gy1fofb4o2avvj20wx0brq4k.jpg">
-<meta property="og:image" content="https://wx1.sinaimg.cn/large/c24ebc18gy1fofb4qlw9pj20yy0ffjs7.jpg">
-<meta property="og:image" content="https://wx4.sinaimg.cn/large/c24ebc18gy1fofb4t1u26j20yy0fbt9i.jpg">
-<meta property="og:image" content="https://wx3.sinaimg.cn/large/c24ebc18gy1foeq937224j20pn0bb74r.jpg">
-<meta property="og:image" content="https://wx1.sinaimg.cn/large/c24ebc18gy1foeq907ehnj20pq0c1aal.jpg">
-<meta property="og:updated_time" content="2018-09-04T06:56:28.000Z">
+<meta property="og:image" content="https://i.loli.net/2019/12/23/mkrg2XT74RvIhqn.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/23/8xJgi7qwdCkRjeP.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/23/dNOBxEQ25Yac3TZ.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/23/jJFuQDcIkfWrah7.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/23/VauM6HBXySgDEZo.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/23/hMpaFr1O9vbt8Xi.jpg">
+<meta property="og:updated_time" content="2019-12-23T03:09:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图片优化-前端优化篇">
 <meta name="twitter:description" content="前端不止，优化不息  作为一名前端er，其实一直我对自己的定位就是服务员，为用户提供好的服务（上菜快）和产品（好吃）。产品这一块需要和PM一起努力，但是服务这一块我们可以根据自身的能力做到更好。 谈到前端优化，图片资源是重中之重。时至今日，页面中单纯显示文字的用户体验是不敢相信的糟糕场景，就拿float一开始设计的目的来说，也是为了满足图文混排的需求。但是图片的出现也让网页越来越胖，服务器每次都">
-<meta name="twitter:image" content="https://wx1.sinaimg.cn/large/c24ebc18gy1fofb0wtl9tj20yy0h9gmn.jpg">
+<meta name="twitter:image" content="https://i.loli.net/2019/12/23/mkrg2XT74RvIhqn.jpg">
   
     <link rel="alternative" href="/atom.xml" title="LonHon的个人博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="https://avatars2.githubusercontent.com/u/19330620?s=460&v=4">
+    <link rel="icon" href="https://wx2.sinaimg.cn/mw690/c24ebc18gy1fof5s9ziahj205u05ut8u.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -59,7 +57,7 @@ ga('send', 'pageview');
   
 
 </head>
-</html>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -69,7 +67,7 @@ ga('send', 'pageview');
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="https://avatars2.githubusercontent.com/u/19330620?s=460&amp;v=4" class="js-avatar">
+			<img src="https://wx2.sinaimg.cn/mw690/c24ebc18gy1fof5s9ziahj205u05ut8u.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">LonHon</a></h1>
@@ -109,7 +107,7 @@ ga('send', 'pageview');
 		        
 					<a class="segmentfault" target="_blank" href="https://segmentfault.com/u/lonhon" title="segmentfault"><i class="icon-segmentfault"></i></a>
 		        
-					<a class="mail" target="_blank" href="mailto:lonhontop@gmail.com" title="mail"><i class="icon-mail"></i></a>
+					<a class="mail" target="_blank" href="mailto:easylhong@126.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -127,7 +125,7 @@ ga('send', 'pageview');
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://avatars2.githubusercontent.com/u/19330620?s=460&amp;v=4" class="js-avatar">
+				<img src="https://wx2.sinaimg.cn/mw690/c24ebc18gy1fof5s9ziahj205u05ut8u.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">LonHon</h1>
@@ -150,7 +148,7 @@ ga('send', 'pageview');
 			        
 						<a class="segmentfault" target="_blank" href="https://segmentfault.com/u/lonhon" title="segmentfault"><i class="icon-segmentfault"></i></a>
 			        
-						<a class="mail" target="_blank" href="mailto:lonhontop@gmail.com" title="mail"><i class="icon-mail"></i></a>
+						<a class="mail" target="_blank" href="mailto:easylhong@126.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -176,7 +174,7 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-image-resource-optimization" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-image-resource-optimization" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -204,7 +202,7 @@ ga('send', 'pageview');
 <a id="more"></a>
 <h3 id="开端"><a href="#开端" class="headerlink" title="开端"></a>开端</h3><p>这个月刚刚完成了公司今年第二个项目的开发工作，新项目一开始的时候并没有直接参与编码，就是和项目组商讨一些技术栈选型和模块设计的方案制定。</p>
 <p>主要的工作就是上一个项目的维护与优化，这一部分内容比较多，但是不得不说图片资源的优化是最立竿见影的优化手段，一方面能够快速将图片呈现到用户眼前，另一方面也能够有效减轻业务服务器的压力。</p>
-<h4 id="行业大佬们怎么做？"><a href="#行业大佬们怎么做？" class="headerlink" title="行业大佬们怎么做？"></a>行业大佬们怎么做？</h4><p><img src="https://wx1.sinaimg.cn/large/c24ebc18gy1fofb0wtl9tj20yy0h9gmn.jpg" alt="" width="1000"></p>
+<h4 id="行业大佬们怎么做？"><a href="#行业大佬们怎么做？" class="headerlink" title="行业大佬们怎么做？"></a>行业大佬们怎么做？</h4><p><img src="https://i.loli.net/2019/12/23/mkrg2XT74RvIhqn.jpg" alt="" width="1000"></p>
 
 <p>上图中可看到淘宝主页在chrome浏览器下在使用webp进行深度优化，有关于webp的优点可以自行搜索。</p>
 <hr>
@@ -223,21 +221,21 @@ ga('send', 'pageview');
 <p><strong> tips： </strong><br>内联图像无法缓存，所以建议针对小图标等文件进行转码，较大的图像采取其它手段优化。<br>在webpack中配置后，在引用图片时只能使用相对地址，不然会被忽略。</p>
 <h3 id="二、图像压缩"><a href="#二、图像压缩" class="headerlink" title="二、图像压缩"></a>二、图像压缩</h3><p>图像压缩的目的是在保证图片质量的情况下尽可能减小图片的存储大小，上面也提到了webp，不过webp目前只能在chrome下识别，可以先了解，关于webp的可以参见 <a href="https://segmentfault.com/a/1190000005972143" target="_blank" rel="noopener">这篇文章</a></p>
 <p>这里推荐一个图片在线压缩的网站 <a href="https://tinypng.com/" target="_blank" rel="noopener"> Tinypng </a><br>使用方法不赘述，以本篇文章使用的图片为例，我们直接看压缩效果：</p>
-<p><img src="https://wx1.sinaimg.cn/mw690/c24ebc18gy1fofb4o2avvj20wx0brq4k.jpg" alt="" width="650"></p>
+<p><img src="https://i.loli.net/2019/12/23/8xJgi7qwdCkRjeP.jpg" alt="" width="650"></p>
 
 <p>经过压缩后从400K减至129K，压缩比例达到67%！</p>
 <h3 id="三、利用IDC-CDN加速"><a href="#三、利用IDC-CDN加速" class="headerlink" title="三、利用IDC+CDN加速"></a>三、利用IDC+CDN加速</h3><p><strong> IDC 网络数据中心 </strong><br>像现在我购物的jd，我选择它的原因就是因为他能够做到自营商品211限时达。<br>IDC是基础设施，也就是通过搭建多个服务器来为用户提供服务。匹配jd的在全国各地的商品仓库，通过这种物理方式来实现各地区网络平等。<br>我们平时的个人网站也可以通过国内的图床网站进行图像资源分布。</p>
 <p><strong> CDN 内容分发网络 </strong><br>CDN可以看做最优路径选择，通过逻辑手段，选择最合适的网络链路来实现网络优化。<br>CDN可看做快递分配，当我在成都下单后，jd服务器看到我的收货地址在成都高新区，则可以直接让郫都区的仓库发货，让快递员直奔高新区，同时避开拥堵道路（拥堵节点）。</p>
 <p>这样两步之后，就能有效减少传输时间，毕竟成都下单成都发货比成都下单上海发货，从距离上看也能知道孰快孰慢。网络和现实的道路其实也是相同的，网络的建立也是依托于一个个物理设备，所以减少了物理传输距离也就等于减少了网络传输距离。</p>
 <p>置顶文章也提到了，本站是通过GitPage进行搭建的，资源都是放在美利坚，所以请求资源会比较慢，可以看看使用国内图床前一篇文章的加载速度：<br><strong> 资源放在美利坚 </strong></p>
-<p><img src="https://wx1.sinaimg.cn/large/c24ebc18gy1fofb4qlw9pj20yy0ffjs7.jpg" alt="" width="1000"></p>
+<p><img src="https://i.loli.net/2019/12/23/dNOBxEQ25Yac3TZ.jpg" alt="" width="1000"></p>
 
 <p><strong> 资源放国内图床 </strong></p>
-<p><img src="https://wx4.sinaimg.cn/large/c24ebc18gy1fofb4t1u26j20yy0fbt9i.jpg" alt="" width="1000"></p>
+<p><img src="https://i.loli.net/2019/12/23/jJFuQDcIkfWrah7.jpg" alt="" width="1000"></p>
 
 <p>可以看到页面加载时间从2.90s优化到了1.59s，当然我这里只用了一篇博文来举例，但管中窥豹可见图像资源优化带来的效果很明显。</p>
 <h3 id="四、分布存储"><a href="#四、分布存储" class="headerlink" title="四、分布存储"></a>四、分布存储</h3><p>先上图，下面是淘宝首页做的分布存储：</p>
-<p><img src="https://wx3.sinaimg.cn/large/c24ebc18gy1foeq937224j20pn0bb74r.jpg" alt="" width="850"></p><br>可看到域名有了变化，且都不是<a href="http://www.taoboa.com域下的资源" target="_blank" rel="noopener">www.taoboa.com域下的资源</a><br><p><img src="https://wx1.sinaimg.cn/large/c24ebc18gy1foeq907ehnj20pq0c1aal.jpg" alt="" width="850"></p>
+<p><img src="https://i.loli.net/2019/12/23/VauM6HBXySgDEZo.jpg" alt="" width="850"></p><br>可看到域名有了变化，且都不是www.taoboa.com域下的资源<br><p><img src="https://i.loli.net/2019/12/23/hMpaFr1O9vbt8Xi.jpg" alt="" width="850"></p>
 
 <p>浏览器对每个网站是有最大连接数的限制的，这么做的原因是由于 TCP 协议的限制，PC端只有65536个端口可用以向外部发出连接，所以浏览器为了保护PC资源不被全部占用，会对请求进行限制。</p>
 <p>如之前chrome v4设置的同一domain下最大连接数为6,意味着页面发送10个请求出去后，会有4个请求被堵塞，等到前面的请求完成后才能正常发送。</p>
@@ -387,14 +385,12 @@ ga('send', 'pageview');
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
-    	<div class="footer-right">
-    		&copy; 2019 LonHon
+    	<div class="footer-left">
+    		&copy; 2021 LonHon
     	</div>
-      <!-- 
-        <div class="footer-left">
-          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-        </div>
-       -->
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
     </div>
   </div>
 </footer>
@@ -485,15 +481,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AOP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">AJAX</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">node</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AOP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -505,19 +501,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">优化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ECharts</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -529,7 +513,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ECharts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">通知</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ES2015</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -541,11 +541,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ES2015</a>
+                <a href="javascript:void(0)" class="js-tag color5">puppeteer</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">String对象</a>
+                <a href="javascript:void(0)" class="js-tag color1">UI testing</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -565,7 +573,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">String对象</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -574,6 +582,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -609,6 +621,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">编辑器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">eslint</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
@@ -621,7 +641,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
@@ -665,6 +685,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
+              <a href="https://www.w3cvip.org/," target="_blank" class="search-title"><i class="icon-quo-left icon"></i>w3c前端社区</a>
+            </li>
+          
+            <li class="search-li">
               <a href="https://moonou.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Moonou Blog</a>
             </li>
           
@@ -676,7 +700,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">94生人 &lt;br&gt; &lt;br&gt; 喜热厌冷 &lt;br&gt; 喜电脑、电影、港风 &lt;br&gt; &lt;br&gt;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">94生人 &lt;br&gt; &lt;br&gt; 喜热怕冷 &lt;br&gt; 喜电脑、电影、Eason &lt;br&gt; &lt;br&gt;</div>
   	  	
     	</section>
     

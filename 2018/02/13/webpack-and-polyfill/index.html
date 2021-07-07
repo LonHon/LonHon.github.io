@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta name="keywords" content="lonhon lonhon的博客 前端博客 游龙翔隼">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://lonhon.top">
   <title>webpack中bebel-polyfill的使用 | LonHon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -16,20 +15,19 @@
 <meta property="og:url" content="http://lonhon.top/2018/02/13/webpack-and-polyfill/index.html">
 <meta property="og:site_name" content="LonHon的个人博客">
 <meta property="og:description" content="ES2017（ES8）于2017年六月底发布，包括了对象值遍历Object.values(obj)、对象的属性描述符获取Object.getOwnPropertyDescriptor(obj, prop)、异步处理方案async await等，具体的可参见文档查看完整版本 本文主要讲述webpack + babel 实现ES8的使用，工具如下:webpack@2.3.3babel-polyfill">
-<meta property="og:locale" content="default">
-<meta property="og:image" content="https://wx4.sinaimg.cn/mw690/c24ebc18gy1fof5x9zq6kj20ca02vt8j.jpg">
-<meta property="og:image" content="https://wx1.sinaimg.cn/mw690/c24ebc18gy1fof5x5xa36j20bj02tt8j.jpg">
-<meta property="og:image" content="https://wx3.sinaimg.cn/mw690/c24ebc18gy1fof5xcvpqij209804owea.jpg">
-<meta property="og:updated_time" content="2018-09-04T06:56:26.000Z">
+<meta property="og:image" content="https://i.loli.net/2019/12/24/zf7alV183LptrFO.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/24/oa2YpbrfdZIjsDx.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/24/OnoJsIFXBaMup6w.jpg">
+<meta property="og:updated_time" content="2019-12-24T07:28:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack中bebel-polyfill的使用">
 <meta name="twitter:description" content="ES2017（ES8）于2017年六月底发布，包括了对象值遍历Object.values(obj)、对象的属性描述符获取Object.getOwnPropertyDescriptor(obj, prop)、异步处理方案async await等，具体的可参见文档查看完整版本 本文主要讲述webpack + babel 实现ES8的使用，工具如下:webpack@2.3.3babel-polyfill">
-<meta name="twitter:image" content="https://wx4.sinaimg.cn/mw690/c24ebc18gy1fof5x9zq6kj20ca02vt8j.jpg">
+<meta name="twitter:image" content="https://i.loli.net/2019/12/24/zf7alV183LptrFO.jpg">
   
     <link rel="alternative" href="/atom.xml" title="LonHon的个人博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="https://avatars2.githubusercontent.com/u/19330620?s=460&v=4">
+    <link rel="icon" href="https://wx2.sinaimg.cn/mw690/c24ebc18gy1fof5s9ziahj205u05ut8u.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -56,7 +54,7 @@ ga('send', 'pageview');
   
 
 </head>
-</html>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -66,7 +64,7 @@ ga('send', 'pageview');
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="https://avatars2.githubusercontent.com/u/19330620?s=460&amp;v=4" class="js-avatar">
+			<img src="https://wx2.sinaimg.cn/mw690/c24ebc18gy1fof5s9ziahj205u05ut8u.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">LonHon</a></h1>
@@ -106,7 +104,7 @@ ga('send', 'pageview');
 		        
 					<a class="segmentfault" target="_blank" href="https://segmentfault.com/u/lonhon" title="segmentfault"><i class="icon-segmentfault"></i></a>
 		        
-					<a class="mail" target="_blank" href="mailto:lonhontop@gmail.com" title="mail"><i class="icon-mail"></i></a>
+					<a class="mail" target="_blank" href="mailto:easylhong@126.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -124,7 +122,7 @@ ga('send', 'pageview');
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://avatars2.githubusercontent.com/u/19330620?s=460&amp;v=4" class="js-avatar">
+				<img src="https://wx2.sinaimg.cn/mw690/c24ebc18gy1fof5s9ziahj205u05ut8u.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">LonHon</h1>
@@ -147,7 +145,7 @@ ga('send', 'pageview');
 			        
 						<a class="segmentfault" target="_blank" href="https://segmentfault.com/u/lonhon" title="segmentfault"><i class="icon-segmentfault"></i></a>
 			        
-						<a class="mail" target="_blank" href="mailto:lonhontop@gmail.com" title="mail"><i class="icon-mail"></i></a>
+						<a class="mail" target="_blank" href="mailto:easylhong@126.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -173,7 +171,7 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-webpack-and-polyfill" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-webpack-and-polyfill" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -194,7 +192,7 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
         <p>ES2017（ES8）于2017年六月底发布，包括了对象值遍历Object.values(obj)、对象的属性描述符获取Object.getOwnPropertyDescriptor(obj, prop)、异步处理方案async await等，具体的可参见<a href="https://www.ecma-international.org/ecma-262/8.0/index.html" target="_blank" rel="noopener">文档</a>查看完整版本</p>
-<p>本文主要讲述webpack + babel 实现ES8的使用，工具如下:<br><a href="mailto:webpack@2.3.3" target="_blank" rel="noopener">webpack@2.3.3</a><br><a href="mailto:babel-polyfill@6.26.0" target="_blank" rel="noopener">babel-polyfill@6.26.0</a></p>
+<p>本文主要讲述webpack + babel 实现ES8的使用，工具如下:<br>webpack@2.3.3<br>babel-polyfill@6.26.0</p>
 <a id="more"></a>
 <p>作为一个时刻关注行业动向的前端er，最想做的应该是把新发布的Features赶紧用在自己的项目里or在个人项目中先练习使用。</p>
 <p>通过webpack + babel能让我们快速的实现我们的想法，这里在index.js文件中使用到了async/await。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// index.js</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">sleep</span>(<span class="params">time</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">            setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="built_in">Math</span>.random());</span><br><span class="line">                resolve();</span><br><span class="line">            &#125;, time * <span class="number">1000</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">main</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'print random: '</span>);</span><br><span class="line">        <span class="keyword">await</span> sleep(<span class="number">1</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"print end."</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    main();</span><br></pre></td></tr></table></figure></p>
@@ -202,14 +200,14 @@ ga('send', 'pageview');
 <h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h3><p>如果之前已经在使用webpack，可直接在项目中进行babel-polyfill安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm i -D babel-polyfill</span><br></pre></td></tr></table></figure></p>
 <p>此时已经可在package.json和node_modules中找到它的踪迹了。</p>
 <h3 id="2-配置"><a href="#2-配置" class="headerlink" title="2.配置"></a>2.配置</h3><p>找到webpack配置文件，一般为webpack.config.js<br>找到文件入口 entry 项<br>原来输出index.js时为：</p>
-<p><img src="https://wx4.sinaimg.cn/mw690/c24ebc18gy1fof5x9zq6kj20ca02vt8j.jpg" alt="" width="450"></p>
+<p><img src="https://i.loli.net/2019/12/24/zf7alV183LptrFO.jpg" alt="" width="450"></p>
 
 <p>修改后</p>
-<p><img src="https://wx1.sinaimg.cn/mw690/c24ebc18gy1fof5x5xa36j20bj02tt8j.jpg" alt="" width="450"></p>
+<p><img src="https://i.loli.net/2019/12/24/oa2YpbrfdZIjsDx.jpg" alt="" width="450"></p>
 
 
 <h3 id="3-使用"><a href="#3-使用" class="headerlink" title="3.使用"></a>3.使用</h3><p>现在可以在js中放心使用了，运行看看结果：</p>
-<p><img src="https://wx3.sinaimg.cn/mw690/c24ebc18gy1fof5xcvpqij209804owea.jpg" alt="" width="450"></p>
+<p><img src="https://i.loli.net/2019/12/24/OnoJsIFXBaMup6w.jpg" alt="" width="450"></p>
 
 <h3 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h3><p>最开始引入polyfill后，在index.js文件头部使用import导入后报错“only one instance of babel-polyfill is allowed”<br>这种情况提示的也很清楚了，检查后删除该文件中的导入语句就可以了，相当于 <strong> 只能在webpack配置文件中的entry入口中使用 </strong> 。<br>且一个页面中只能导入一次polyfill，不能在一个页面的多个js分别导入。<br>另外这个模块占的控件也比较大 未压缩前244KB，min压缩版也有103KB。<br>所以建议在个人项目里学习新东西的时候敞开用，生产环境还是斟酌一下，毕竟新增的东西我们主要是要先了解其实现原理和使用方法，再结合实际项目来使用。</p>
 
@@ -356,14 +354,12 @@ ga('send', 'pageview');
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
-    	<div class="footer-right">
-    		&copy; 2019 LonHon
+    	<div class="footer-left">
+    		&copy; 2021 LonHon
     	</div>
-      <!-- 
-        <div class="footer-left">
-          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-        </div>
-       -->
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
     </div>
   </div>
 </footer>
@@ -454,15 +450,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AOP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">AJAX</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">node</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AOP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -474,19 +470,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">优化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ECharts</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -498,7 +482,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ECharts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">通知</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ES2015</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -510,11 +510,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ES2015</a>
+                <a href="javascript:void(0)" class="js-tag color5">puppeteer</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">String对象</a>
+                <a href="javascript:void(0)" class="js-tag color1">UI testing</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -534,7 +542,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">String对象</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -543,6 +551,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -578,6 +590,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">编辑器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">eslint</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
@@ -590,7 +610,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
@@ -634,6 +654,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
+              <a href="https://www.w3cvip.org/," target="_blank" class="search-title"><i class="icon-quo-left icon"></i>w3c前端社区</a>
+            </li>
+          
+            <li class="search-li">
               <a href="https://moonou.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Moonou Blog</a>
             </li>
           
@@ -645,7 +669,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">94生人 &lt;br&gt; &lt;br&gt; 喜热厌冷 &lt;br&gt; 喜电脑、电影、港风 &lt;br&gt; &lt;br&gt;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">94生人 &lt;br&gt; &lt;br&gt; 喜热怕冷 &lt;br&gt; 喜电脑、电影、Eason &lt;br&gt; &lt;br&gt;</div>
   	  	
     	</section>
     
